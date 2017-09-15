@@ -1,0 +1,88 @@
+header {
+  background-color: transparent;
+  text-align: right;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+
+nav {
+  background-color: $black;
+  text-align: left;
+  height: 100%;
+  width: 100%;
+  padding: 8vw;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  overflow: scroll;
+}
+
+
+.mobile-menu-checkbox ~ nav { transition: left .666s ease .1s }
+
+.mobile-menu-checkbox:checked ~ nav { left: 0;}
+
+body {
+  background-color: $fuschia;
+}
+
+main {
+  width: 95%;
+  margin: auto;
+  padding-bottom: 10rem;
+}
+
+div.h1wrap {
+  background-color: $dark-fuschia;
+  text-align: center;
+  width: 100%;
+
+  @include laptop {
+    height: 100vh;
+    position: relative;
+  }
+}
+
+section.webproject {
+  margin-top: 3rem;
+}
+
+
+//*** FOOTER ***//
+/* Footer not in use currently
+
+footer {
+  display: none;
+  height: 400px;
+  background-color: $black;
+  width: 100%;
+  position: relative;
+
+    @include tablet {
+      height: 200px;
+    }
+}
+
+
+
+div.footmobiletextures {
+
+  @include tablet {
+    display: none;
+  }
+}
+
+div.socmedia {
+  text-align: center;
+  padding-top: 3rem;
+
+    @include tablet {
+      text-align: right;
+      padding-right: 3rem;
+    }
+}
+
+*/

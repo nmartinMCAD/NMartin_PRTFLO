@@ -1,0 +1,50 @@
+$header-font: 'Permanent Marker', cursive;
+$copy-font: 'Noto Sans', Helvetica, sans-serif;
+$deco-font: 'Press Start 2P', 'Rubik', Helvetica;
+
+$subhead-weight: 700;
+$copy-weight: 400;
+
+//*colors*//
+
+$white: #fff;
+$black: #111;
+$fuschia: #F012BE;
+$dark-fuschia: #E01795;
+$teal: #39CCCC;
+$dark-teal: #3ABFBB;
+$blue: #7FDBFF;
+$gold: #FEAC2B;
+$dark-gold: #F49E2C;
+$navy: #042439;
+$green: #05A57A;
+$dark-green: #06966D;
+$orange: #BE6E2F;
+$grey: #444;
+
+
+//*media queries*//
+
+$tablet-width: "screen and (min-width: 480px)";
+$laptop-width: "screen and (min-width: 720px)";
+$desktop-width: "screen and (min-width: 1080px)";
+
+//*mixins*//
+
+@mixin tablet {
+  @media #{$tablet-width} {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media #{$laptop-width} {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media #{$desktop-width} {
+    @content;
+  }
+}

@@ -1,0 +1,287 @@
+html {
+  font-family: $copy-font;
+  font-weight: $copy-weight;
+  font-size: 16px;
+  cursor: url(../img/trackglove_cursor.png), auto;
+}
+
+a, input, label, i {
+   cursor: url(../img/trackglove_cursorlink.png), auto;
+ }
+
+h1 {
+  font-family: $header-font;
+  font-size: 7vw;
+  color: $dark-fuschia;
+  text-transform: uppercase;
+  padding-top: 2vw;
+  padding-right: 2vw;
+
+    @include tablet {
+      font-size: 2.2em;
+    }
+
+    @include laptop {
+      font-size: 3.2em;
+    }
+
+    @include desktop {
+        font-size: 4em;
+        margin-left: 1rem;
+        padding-top: 3rem;
+    }
+}
+
+h2.title {
+  font-family: $copy-font;
+  text-transform: uppercase;
+  font-size: 15vw;
+
+    @include tablet {
+      font-size:5em;
+    }
+
+    @include laptop {
+      font-size: 7.5em;
+    }
+
+    @include desktop {
+      font-size: 11vw;
+    }
+}
+
+
+/*** SECTION CONTROLLERS ***/
+input {
+  display: none;
+}
+
+label {
+  display: block;
+  font-family: $header-font;
+  font-size: 10vw;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+
+    @include tablet {
+      font-size: 3em;
+    }
+
+    @include laptop {
+      margin-left: -2px;
+    }
+
+    @include desktop {
+      font-size: 3em;
+  }
+}
+
+
+label.web-section-label {
+  color: $fuschia;
+  border: 1px solid $fuschia;
+
+  @include laptop {
+    border-width: 2px;
+  }
+}
+
+label.web-section-label:hover {
+  background-color: $fuschia;
+  color: $white;
+}
+
+
+label.writing-section-label {
+  color: $teal;
+  border: 1px solid $teal;
+
+  @include laptop {
+    border-width: 2px;
+  }
+}
+
+label.writing-section-label:hover {
+  background-color: $teal;
+  color: $white;
+}
+
+label.photo-section-label {
+  color: $gold;
+  border: 1px solid $gold;
+
+  @include laptop {
+    border-width: 2px;
+  }
+}
+
+label.photo-section-label:hover {
+  background-color: $gold;
+  color: $white;
+}
+
+label.music-section-label {
+  color: $green;
+  border: 1px solid $green;
+
+  @include laptop {
+    border-width: 2px;
+  }
+}
+
+label.music-section-label:hover {
+  background-color: $green;
+  color: $white;
+}
+
+
+.sitesection i {
+  font-size: 10vh;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+
+    @include tablet {
+      font-size: 2em;
+    }
+
+    @include laptop {
+      top: 1rem;
+    }
+}
+
+
+//*** SECTION STYLES ***//
+.sitesection h3 {
+  display: inline;
+  font-family: $header-font;
+  font-size: 13vw;
+  color: $white;
+  margin-left: 1rem;
+
+    @include tablet {
+      font-size: 4em;
+    }
+
+    @include laptop {
+      font-size: 5em;
+      margin-right: 1rem;
+    }
+
+    @include desktop {
+      font-size: 5em;
+    }
+}
+
+.sitesection h4 {
+  font-family: $copy-font;
+  font-size: 7vw;
+  color: $white;
+  text-transform: uppercase;
+  margin: 2rem 0 .5rem 0;
+
+    @include tablet {
+      font-size: 1.5em;
+    }
+
+    @include laptop {
+      font-size: 2em;
+    }
+
+    @include desktop {
+      font-size: 4em;
+    }
+}
+
+section#web h4 {
+  text-shadow: 5px 5px $dark-fuschia;
+
+  @include desktop {
+      text-shadow: 7px 7px $dark-fuschia;
+  }
+}
+
+section#writing h4 {
+  text-shadow: 5px 5px $dark-teal;
+
+  @include desktop {
+      text-shadow: 7px 7px $dark-teal;
+  }
+}
+
+section#photo h4 {
+  text-shadow: 5px 5px $dark-gold;
+
+  @include desktop {
+      text-shadow: 7px 7px $dark-gold;
+  }
+}
+
+section#music h4 {
+  text-shadow: 5px 5px $dark-green;
+
+  @include desktop {
+      text-shadow: 7px 7px $dark-green;
+  }
+}
+
+.sitesection p {
+  font-size: 3.8vw;
+  line-height: 1.6;
+  color: $white;
+
+    @include tablet {
+      font-size: 1em;
+    }
+
+    @include desktop {
+      font-size: 1.1em;
+    }
+}
+
+.sitesection a {
+  text-decoration: none;
+}
+
+div.glitchbttn {
+  font-family: $header-font;
+  text-decoration: none;
+  font-size: 7vw;
+  color: $white;
+
+  @include tablet {
+    font-size: 2.5em;
+  }
+}
+
+
+
+.projectspage li {
+  font-family: $header-font;
+  font-size: 8vw;
+  list-style-type: none;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+
+/***** FOOTER (not currently in use)
+div.socmedia i {
+  color: $white;
+}
+
+i.fa-facebook-official, i.fa-linkedin-square, i.fa-instagram, i.fa-tumblr-square {
+  font-size: 3.6em;
+}
+
+footer p {
+  text-align: center;
+  color: $white;
+  margin-top: 2rem;
+
+    @include tablet {
+      text-align: right;
+      padding-right: 3rem;
+    }
+}
+*****/

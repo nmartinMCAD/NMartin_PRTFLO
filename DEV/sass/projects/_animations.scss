@@ -1,0 +1,156 @@
+/**** GLITCH BLUE BACKGROUND ****/
+.glitchbluebg{
+  color:$white;
+}
+
+@keyframes noise-anim{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(1)+px,9999px,random(1000)+px,0);
+    }
+  }
+}
+.glitchbluebg:after{
+  content:'portfolio';
+  position:absolute;
+  top: 0;
+  right: 2vw;
+  color:$white;
+  background: transparent;
+  clip:rect(0,500px,0,0);
+  animation:noise-anim 8s infinite linear alternate-reverse;
+
+  @include tablet {
+    right: 1rem;
+  }
+
+  @include laptop {
+    top: 1rem;
+  }
+
+  @include desktop {
+    top: 5.75rem;
+    right: 4rem;
+  }
+}
+
+@keyframes noise-anim-2{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(600)+px,0);
+    }
+  }
+}
+
+.glitchbluebg:before{
+  content: 'portfolio';
+  position:absolute;
+  top: 1vw;
+  right: 2vw;
+  text-shadow:-5px 0 $dark-fuschia;
+  color: $fuschia;
+  background: $teal;
+  clip:rect(0,900px,0,0);
+  animation:noise-anim-2 12s infinite linear alternate-reverse;
+
+  @include tablet {
+    top: .25rem;
+    right: 1rem;
+  }
+
+  @include laptop {
+    top: 1.25rem;
+  }
+
+  @include desktop {
+    top: 6rem;
+    right: 4.5rem;
+  }
+}
+
+
+/**** GLITCH RED BACKGROUND ****/
+.glitchredbg{
+  color:$white;
+  font-size:13vw;
+  letter-spacing: .01;
+  margin:0 auto;
+}
+
+.glitchredbg:after{
+  content:'folio';
+  position:absolute;
+  top: 22vw;
+  left: 32vw;
+  text-shadow:-2px 0 $dark-fuschia;
+  color:$white;
+  background:transparent;
+  clip:rect(0, 500px,0,0);
+  animation:noise-anim 12s infinite linear alternate-reverse;
+}
+
+
+.glitchredbg:before{
+  content: 'folio';
+  position:absolute;
+  top: 23vw;
+  left: 32vw;
+  text-shadow:3px 0 $teal;
+  color: $white;
+  background: $fuschia;
+  clip:rect(0,900px,0,0);
+  animation:noise-anim-2 16s infinite linear alternate-reverse;
+}
+
+
+/**** GLITCH BUTTONS ****/
+.glitchbttn{
+  color:$white;
+  margin:0 auto;
+}
+
+.glitchbttn:after{
+  content:'more projects';
+  position:absolute;
+  top: .8vw;
+  right: 2.75vw;
+  color:$white;
+  background: transparent;
+  clip:rect(0,500px,0,0);
+  animation:noise-anim 8s infinite linear alternate-reverse;
+
+  @include tablet {
+    top: 0;
+    right: 1.3rem;
+  }
+}
+
+.glitchbttn:before{
+  content: 'more projects';
+  position:absolute;
+  top: 1.2vw;
+  right: 2.75vw;
+  color: $teal;
+  background: transparent;
+  clip:rect(0,900px,0,0);
+  animation:noise-anim-2 12s infinite linear alternate-reverse;
+
+  @include tablet {
+    top: .25rem;
+    right: 1.4rem;
+  }
+}
+
+section#writing .glitchbttn:before {
+  color: $fuschia;
+}
+
+section#photo .glitchbttn:before {
+  color: $green;
+}
+
+section#music .glitchbttn:before {
+  color: $gold;
+}

@@ -1,0 +1,99 @@
+img.pagebg {
+    position: absolute;
+    right: 0;
+    bottom: 5rem;
+    opacity: .1;
+    width: 130%;
+    max-width: 1350px;
+    z-index: -10;
+
+    @include laptop {
+      width: 100%;
+      bottom: 1rem;
+    }
+
+    @include desktop {
+      opacity: .2;
+    }
+}
+
+img.categorylogo {
+  width: 20vw;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  @include tablet {
+    width: 100px;
+  }
+
+  @include laptop {
+    width: 70%;
+    opacity: .2;
+    z-index: -1;
+    top: 2rem;
+  }
+}
+
+
+div.section-content img.webshowcase {
+    width: 90vw;
+    max-width: 700px;
+    display: block;
+    margin: auto;
+    margin-top: 8vw;
+
+    @include tablet {
+      width: 80%;
+      margin-top: 3rem;
+    }
+
+    @include laptop {
+      width: 50%;
+      float: left;
+    }
+}
+
+
+/***** FOOTER (not currently in use)
+.footericon {
+  width: 50%;
+  max-width: 15rem;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+img.footertexture {
+  width: 20vw;
+  max-width: 6rem;
+  position: absolute;
+  bottom: 0;
+  left: 2vw;
+}
+
+img.footertextureflip {
+  width: 20vw;
+  max-width: 6rem;
+  position: absolute;
+  bottom: 0;
+  right: 2vw;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+img.footertexturecenter {
+  width: 35vw;
+  max-width: 10rem;
+  position: absolute;
+  bottom: 5vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+*****/

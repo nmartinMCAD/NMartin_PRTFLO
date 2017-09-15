@@ -1,0 +1,215 @@
+body {
+  background-color: $black;
+}
+
+header {
+  height: 9vw;
+  text-align: right;
+  margin-top: 4vw;
+
+    @include tablet {
+      height: 50px;
+      margin-top: 1rem;
+    }
+
+    @include desktop {
+      text-align: left;
+      line-height: 1;
+    }
+}
+
+article.pagetitle {
+  height: 14vw;
+  position: relative;
+
+  @include tablet {
+    height: 5rem;
+  }
+}
+
+section.section-controllers {
+  width: 95%;
+  margin: auto;
+  margin-top: 8vh;
+
+  @include tablet {
+    margin-top: 3rem;
+  }
+
+  @include laptop {
+    width: 60%;
+    margin: 0;
+    margin-top: 8rem;
+  }
+
+  @include desktop {
+    width: 25%;
+    margin-top: 1rem;
+  }
+}
+
+.sitesection {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  @include laptop {
+    text-align: right;
+  }
+}
+
+div.section-content {
+  width: 95%;
+  margin: auto;
+  max-width: 1400px;
+}
+
+div.sectioncopy {
+
+  @include laptop {
+    text-align: left;
+    width: 45%;
+    float: right;
+}
+}
+
+
+//*** SECTION STYLES ***//
+section#web {
+  background-color: $fuschia;
+  color: $white;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 1000;
+}
+
+section#writing {
+  background-color: $teal;
+  color: $white;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 2000;
+}
+
+section#photo {
+  background-color: $gold;
+  color: $white;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 3000;
+}
+
+section#music {
+  background-color: $green;
+  color: $white;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 4000;
+}
+
+
+//*** SECTION TRANSITIONS ***//
+.web-section-checkbox ~ section#web { transition: left .666s ease .1s }
+
+.web-section-checkbox:checked ~ section#web { left: 0;}
+
+
+.writing-section-checkbox ~ section#writing { transition: left .666s ease .1s }
+
+.writing-section-checkbox:checked ~ section#writing { left: 0; }
+
+
+.photo-section-checkbox ~ section#photo { transition: left .666s ease .1s }
+
+.photo-section-checkbox:checked ~ section#photo { left: 0; }
+
+
+.music-section-checkbox ~ section#music { transition: left .666s ease .1s }
+
+.music-section-checkbox:checked ~ section#music { left: 0; }
+
+
+
+div.bttnwrap {
+  position: relative;
+  border: 1px solid $white;
+  margin-top: 6vw;
+  height: 13.5vw;
+  width: 55vw;
+  float: right;
+
+  @include tablet {
+    height: 4rem;
+    width: 20rem;
+    margin-top: 2rem;
+  }
+
+  @include laptop {
+    border: 2px solid $white;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
+
+
+
+
+/***** Turned off for final assignment due to lack of content *****/
+
+#writing div.section-content {
+  display: none;
+  visibility: hidden;
+}
+
+#photo div.section-content {
+  display: none;
+  visibility: hidden;
+}
+
+#music div.section-content {
+  display: none;
+  visibility: hidden;
+}
+
+
+//*** FOOTER ***//
+/***** Footer not in use currently
+
+footer {
+  display: none;
+  height: 400px;
+  background-color: $black;
+  width: 100%;
+  position: relative;
+
+    @include tablet {
+      height: 200px;
+    }
+}
+
+
+
+div.footmobiletextures {
+
+  @include tablet {
+    display: none;
+  }
+}
+
+div.socmedia {
+  text-align: center;
+  padding-top: 3rem;
+
+    @include tablet {
+      text-align: right;
+      padding-right: 3rem;
+    }
+}
+
+*****/
