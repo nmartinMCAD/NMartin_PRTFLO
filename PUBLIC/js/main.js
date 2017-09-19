@@ -1,13 +1,15 @@
-var sectionButton =
-document.querySelector('.sectionButton');
+var webButton =
+document.querySelector('#webButton');
 
-sectionButton.addEventListener('click',
+webButton.addEventListener('click',
 	function() {
 		console.log('clicky!!!');
 		document
 			.querySelector('body')
+			.removeAttribute('class')
+			.querySelector('body')
 			.classList
-			.toggle('sectionOpen');
+			.toggle('webSection');
 });
 
 
@@ -19,6 +21,5 @@ backButton.addEventListener('click',
 		console.log ('clicky!!!');
 		document
 			.querySelector('body')
-			.classList
-			.toggle('sectionOpen');
+			.removeAttribute('class')
 });

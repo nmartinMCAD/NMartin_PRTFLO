@@ -43,42 +43,13 @@ section#websection {
   display: none;
 }
 
-.sectionOpen #websection {
+.webSection #websection {
   display: block;
 }
 
 
 
-section#writingsection {
-  background-color: $teal;
-  display: none;
-}
 
-.sectionOpen #writingsection {
-  display: block;
-}
-
-
-
-section#photosection {
-  background-color: $gold;
-  display: none;
-}
-
-.sectionOpen #photosection {
-  display: block;
-}
-
-
-
-section#musicsection {
-  background-color: $green;
-  display: none;
-}
-
-.sectionOpen #musicsection {
-  display: block;
-}
 
 
 
