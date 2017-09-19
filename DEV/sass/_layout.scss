@@ -1,0 +1,144 @@
+body {
+  background-color: $black;
+}
+
+header {
+  text-align: center;
+
+    @include tablet {
+      margin-top: 1rem;
+      text-align: right;
+    }
+
+    @include desktop {
+        float: right;
+        width: 600px;
+        clear: both;
+        margin-top: -1.75rem;
+        margin-right: 1rem;
+    }
+}
+
+section.worktypebuttons {
+    @include desktop {
+        margin-top: 5rem;
+    }
+}
+
+section.sitesection {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include desktop {
+      width: 80%;
+      left: 20%;
+    }
+}
+
+section#websection {
+  background-color: $fuschia;
+  display: none;
+}
+
+.sectionOpen #websection {
+  display: block;
+}
+
+
+
+section#writingsection {
+  background-color: $teal;
+  display: none;
+}
+
+.sectionOpen #writingsection {
+  display: block;
+}
+
+
+
+section#photosection {
+  background-color: $gold;
+  display: none;
+}
+
+.sectionOpen #photosection {
+  display: block;
+}
+
+
+
+section#musicsection {
+  background-color: $green;
+  display: none;
+}
+
+.sectionOpen #musicsection {
+  display: block;
+}
+
+
+
+//*** SECTION STYLES ***//
+
+
+
+
+
+
+/***** Turned off for final assignment due to lack of content *****/
+
+#writing div.section-content {
+  display: none;
+  visibility: hidden;
+}
+
+#photo div.section-content {
+  display: none;
+  visibility: hidden;
+}
+
+#music div.section-content {
+  display: none;
+  visibility: hidden;
+}
+
+
+//*** FOOTER ***//
+/***** Footer not in use currently
+
+footer {
+  display: none;
+  height: 400px;
+  background-color: $black;
+  width: 100%;
+  position: relative;
+
+    @include tablet {
+      height: 200px;
+    }
+}
+
+
+
+div.footmobiletextures {
+
+  @include tablet {
+    display: none;
+  }
+}
+
+div.socmedia {
+  text-align: center;
+  padding-top: 3rem;
+
+    @include tablet {
+      text-align: right;
+      padding-right: 3rem;
+    }
+}
+
+*****/

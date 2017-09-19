@@ -1,0 +1,213 @@
+html {
+  font-family: $copy-font;
+  font-weight: $copy-weight;
+  font-size: 16px;
+  cursor: url(../img/trackglove_cursor.png), auto;
+}
+
+a, input, h3, i {
+   cursor: url(../img/trackglove_cursorlink.png), auto;
+ }
+
+h1 {
+  font-family: $header-font;
+  font-size: 13vw;
+  color: $white;
+  text-transform: uppercase;
+  padding-top: 1rem;
+
+    @include tablet {
+      font-size: 4em;
+      padding-right: 2rem;
+    }
+
+    @include laptop {
+      font-size: 5em;
+    }
+
+    @include desktop {
+      padding-top: 0;
+    }
+}
+
+
+/*** SECTION CONTROLLERS ***/
+.worktypebuttons h3 {
+  margin: auto;
+  width: 95%;
+  display: block;
+  font-family: $header-font;
+  font-size: 10vw;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+
+    @include tablet {
+      font-size: 3em;
+      margin-left: -1px;
+      text-align: right;
+      padding-left: 0;
+      padding-right: 1rem;
+    }
+
+    @include desktop {
+      font-size: 3em;
+      margin-top: 1rem;
+  }
+}
+
+
+h3#webButton {
+  color: $fuschia;
+  border: 1px solid $fuschia;
+
+  @include tablet {
+    width: 70%;
+  }
+
+  @include laptop {
+    width: 60%;
+  }
+
+  @include desktop {
+    width: 40%;
+  }
+}
+
+h3#webButton:hover {
+  background-color: $fuschia;
+  color: $white;
+}
+
+
+h3#writingButton {
+  color: $teal;
+  border: 1px solid $teal;
+
+  @include tablet {
+    width: 52.5%;
+  }
+
+  @include laptop {
+    width: 42.5%;
+  }
+
+  @include desktop {
+    width: 22.5%;
+  }
+}
+
+h3#writingButton:hover {
+  background-color: $teal;
+  color: $white;
+}
+
+h3#photoButton {
+  color: $gold;
+  border: 1px solid $gold;
+
+  @include tablet {
+    width: 60%;
+  }
+
+  @include laptop {
+    width: 50%;
+  }
+
+  @include desktop {
+    width: 30%;
+  }
+}
+
+h3#photoButton:hover {
+  background-color: $gold;
+  color: $white;
+}
+
+h3#musicButton {
+  color: $green;
+  border: 1px solid $green;
+  margin-bottom: 4rem;
+
+  @include tablet {
+    width: 55%;
+  }
+
+  @include laptop {
+    width: 45%;
+  }
+
+  @include desktop {
+    width: 25%;
+  }
+}
+
+h3#musicButton:hover {
+  background-color: $green;
+  color: $white;
+
+}
+
+h3#aboutButton, h3#blogButton {
+    color: $white;
+    border: 1px solid $white;
+    text-align: right;
+    padding-right: 1.5rem;
+
+
+  @include tablet {
+    width: 35%;
+  }
+
+  @include laptop {
+    width: 35%;
+  }
+
+  @include desktop {
+    width: 17.5%;
+  }
+}
+
+
+//*** SECTION STYLES ***//
+.sitesection i {
+  color: $white;
+  font-size: 3em;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.sectionOpen .worktypebuttons h3 {
+  text-align: left;
+  padding-left: 1.5rem;
+  width: 100%;
+}
+
+.sectionOpen #webButton {
+  background-color: $fuschia;
+  color: $white;
+  pointer-events: none;
+}
+
+
+/***** FOOTER (not currently in use)
+div.socmedia i {
+  color: $white;
+}
+
+i.fa-facebook-official, i.fa-linkedin-square, i.fa-instagram, i.fa-tumblr-square {
+  font-size: 3.6em;
+}
+
+footer p {
+  text-align: center;
+  color: $white;
+  margin-top: 2rem;
+
+    @include tablet {
+      text-align: right;
+      padding-right: 3rem;
+    }
+}
+*****/
