@@ -6,8 +6,6 @@ webButton.addEventListener('click',
 		console.log('clicky!!!');
 		document
 			.querySelector('body')
-			.removeAttribute('class')
-			.querySelector('body')
 			.classList
 			.toggle('webSection');
 });

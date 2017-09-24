@@ -47,6 +47,15 @@ section#websection {
   display: block;
 }
 
+section#writingsection {
+  background-color: $teal;
+  display: none;
+}
+
+.writingSection #writingsection {
+  display: block;
+}
+
 
 
 
