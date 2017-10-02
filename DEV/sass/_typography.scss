@@ -178,7 +178,7 @@ h3#aboutButton, h3#blogButton {
   left: 1rem;
 }
 
-.webSection .worktypebuttons h3 {
+.webSection .worktypebuttons h3, .writingSection .worktypebuttons h3, .photoSection .worktypebuttons h3, .musicSection .worktypebuttons h3, .aboutSection .worktypebuttons h3, .blogSection .worktypebuttons h3 {
   text-align: left;
   padding-left: 1.5rem;
   width: 100%;
@@ -188,6 +188,34 @@ h3#aboutButton, h3#blogButton {
   background-color: $fuschia;
   color: $white;
   pointer-events: none;
+}
+
+.writingSection #writingButton {
+  background-color: $teal;
+  color: $white;
+  pointer-events: none;
+}
+
+.photoSection #photoButton {
+  background-color: $gold;
+  color: $white;
+  pointer-events: none;
+}
+
+.musicSection #musicButton {
+  background-color: $green;
+  color: $white;
+  pointer-events: none;
+}
+
+.aboutSection #aboutButton, .blogSection #blogButton {
+  background-color: $white;
+  color: $black;
+  pointer-events: none;
+}
+
+.aboutSection i, .blogSection i {
+  color: $black;
 }
 
 

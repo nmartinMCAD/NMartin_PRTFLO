@@ -1,23 +1,48 @@
-var webButton =
-document.querySelector('#webButton');
-
-webButton.addEventListener('click',
-	function() {
-		console.log('clicky!!!');
-		document
-			.querySelector('body')
-			.classList
-			.toggle('webSection');
+//Using jQuery
+$(function() {
+	$("h3#webButton").click(function() {
+		$("body").removeClass();
+		$("body").addClass("webSection");
+	});
 });
 
+$(function() {
+	$("h3#writingButton").click(function() {
+		$("body").removeClass();
+		$("body").addClass("writingSection");
+	});
+});
 
-var backButton =
-document.querySelector('.fa-caret-left')
+$(function() {
+	$("h3#photoButton").click(function() {
+		$("body").removeClass();
+		$("body").addClass("photoSection");
+	});
+});
 
-backButton.addEventListener('click',
-	function() {
-		console.log ('clicky!!!');
-		document
-			.querySelector('body')
-			.removeAttribute('class')
+$(function() {
+	$("h3#musicButton").click(function() {
+		$("body").removeClass();
+		$("body").addClass("musicSection");
+	});
+});
+
+$(function() {
+	$("h3#aboutButton").click(function() {
+		$("body").removeClass();
+		$("body").addClass("aboutSection");
+	});
+});
+
+$(function() {
+	$("h3#blogButton").click(function() {
+		$("body").removeClass();
+		$("body").addClass("blogSection");
+	});
+});
+
+$(function() {
+	$(".sitesection i").click(function() {
+		$("body").removeClass();
+	});
 });

@@ -56,16 +56,38 @@ section#writingsection {
   display: block;
 }
 
+section#photosection {
+  background-color: $gold;
+  display: none;
+}
 
+.photoSection #photosection {
+  display: block;
+}
 
+section#musicsection {
+  background-color: $green;
+  display: none;
+}
 
+.musicSection #musicsection {
+  display: block;
+}
 
+section#aboutsection, section#blogsection {
+  background-color: $white;
+  display: none;
+}
 
+.aboutSection #aboutsection, .blogSection #blogsection  {
+  display: block;
+}
+
+section#aboutsection:hover, section#blogsection:hover {
+   cursor: url(../img/trackglove_cursorBlack.png), auto;
+}
 
 //*** SECTION STYLES ***//
-
-
-
 
 
 
