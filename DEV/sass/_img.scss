@@ -17,6 +17,35 @@ img.pagebg {
     }
 }
 
+.bioMolecule img {
+  width: 100%;
+}
+
+.skills img {
+  display: inline;
+  width: 70%;
+}
+
+.pdfWrapper img {
+  width: 30%;
+  max-width: 200px;
+  display: inline;
+  float: right;
+}
+
+img#emailLogo {
+  width: 22.5%;
+  max-width: 100px;
+}
+
+.socialWrapper img {
+  width: 22.5%;
+  max-width: 100px;
+}
+
+.socialWrapper #centerIcon {
+}
+
 
 /***** FOOTER (not currently in use)
 .footericon {

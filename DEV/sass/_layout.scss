@@ -31,6 +31,7 @@ section.sitesection {
     position: absolute;
     top: 0;
     left: 0;
+    overflow: scroll;
 
     @include desktop {
       width: 80%;
@@ -89,24 +90,80 @@ section#aboutsection:hover, section#blogsection:hover {
 
 //*** SECTION STYLES ***//
 
-
-
-/***** Turned off for final assignment due to lack of content *****/
-
-#writing div.section-content {
-  display: none;
-  visibility: hidden;
+div.articleWrapper {
+  width: 95%;
+  margin: auto;
+  margin-top: 6rem;
 }
 
-#photo div.section-content {
-  display: none;
-  visibility: hidden;
+
+
+
+article.bioMolecule p {
+  margin-top: 1rem;
 }
 
-#music div.section-content {
-  display: none;
-  visibility: hidden;
+article.skills {
+  width: 95%;
+  max-width: 450px;
+  margin: auto;
+  margin-top: 5rem;
+
+  @include desktop {
+    float: left;
+    margin-top: 0;
+  }
 }
+
+.skills div {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.skill {
+  margin-bottom: 1rem;
+}
+
+article.aboutFooter {
+  width: 95%;
+  max-width: 450px;
+  margin: auto;
+  margin-top: 20vw;
+  margin-bottom: 8vw;
+
+  @include tablet {
+    margin-top: 6rem;
+  }
+
+  @include desktop {
+    float: right;
+    margin-right: 2rem;
+    margin-top: 0;
+  }
+}
+
+div.emailWrapper {
+  margin-top: 6vw;
+
+  @include tablet {
+    margin-top: 1.5rem;
+  }
+}
+
+div.socialWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4vw;
+  text-align: center;
+
+  @include tablet {
+    margin-top: 1rem;
+  }
+}
+
+
+
+
 
 
 //*** FOOTER ***//

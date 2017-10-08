@@ -17,7 +17,7 @@ h1 {
   padding-top: 1rem;
 
     @include tablet {
-      font-size: 4em;
+      font-size: 3.8em;
       padding-right: 2rem;
     }
 
@@ -28,6 +28,22 @@ h1 {
     @include desktop {
       padding-top: 0;
     }
+}
+
+h2 {
+  color: $dark-gold;
+  font-size: 6vw;
+  letter-spacing: 1.2vw;
+
+  @include tablet {
+    font-size: 1.5em;
+    letter-spacing: .33em;
+    padding-right: 2rem;
+  }
+
+  @include laptop {
+    font-size: 2em;
+  }
 }
 
 
@@ -175,7 +191,7 @@ h3#aboutButton, h3#blogButton {
   font-size: 3em;
   position: absolute;
   top: 1rem;
-  left: 1rem;
+  left: 2.5%;
 }
 
 .webSection .worktypebuttons h3, .writingSection .worktypebuttons h3, .photoSection .worktypebuttons h3, .musicSection .worktypebuttons h3, .aboutSection .worktypebuttons h3, .blogSection .worktypebuttons h3 {
@@ -216,6 +232,66 @@ h3#aboutButton, h3#blogButton {
 
 .aboutSection i, .blogSection i {
   color: $black;
+}
+
+.sitesection h4 {
+  font-family: $header-font;
+  font-size: 10vw;
+}
+
+.skills h4 {
+  font-size: 20vw;
+  margin-bottom: 4vw;
+
+  @include tablet {
+    font-size: 5em;
+    margin-bottom: 1rem;
+  }
+}
+
+.skills h3 {
+  display: inline;
+}
+
+.pdfWrapper h5 {
+  font-size: 8vw;
+  display: inline;
+  float: left;
+  margin-top: 5.6vw;
+
+  @include tablet {
+    font-size: 2.5em;
+    margin-top: 2rem;
+  }
+}
+
+.pdfWrapper i {
+  position: static;
+  font-size: 7vw;
+  margin-top: 8.4vw;
+  margin-left: 4vw;
+
+  @include tablet {
+    font-size: 2em;
+    margin-top: 3rem;
+    margin-left: 1.6rem;
+  }
+}
+
+.emailWrapper a {
+  font-size: 5vw;
+  text-decoration: none;
+  border-bottom: 1px solid $black;
+  padding-bottom: 1vw;
+  color: black;
+  float: right;
+  margin-top: 3vw;
+
+  @include tablet {
+    font-size: 1.5em;
+    margin-top: .75rem;
+    padding-bottom: .25rem;
+  }
 }
 
 
