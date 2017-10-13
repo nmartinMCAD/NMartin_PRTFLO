@@ -2,6 +2,7 @@ html {
   font-family: $copy-font;
   font-weight: $copy-weight;
   font-size: 16px;
+  line-height: 1.5;
   cursor: url(../img/trackglove_cursor.png), auto;
 }
 
@@ -239,18 +240,50 @@ h3#aboutButton, h3#blogButton {
   font-size: 10vw;
 }
 
-.skills h4 {
-  font-size: 20vw;
-  margin-bottom: 4vw;
+article.bioMolecule p {
+  margin-top: 1rem;
+  line-height: 1.5;
 
-  @include tablet {
-    font-size: 5em;
-    margin-bottom: 1rem;
+  @include laptop {
+    width: 72.5%;
+    margin-top: 3rem;
+    margin-left: 5%;
+  }
+
+  @include desktop {
+    width: 47.5%;
+    float: right;
+    margin-left: 0;
+    margin-top: 0;
   }
 }
 
-.skills h3 {
+.skills h4 {
+  font-family: $copy-font;
+  font-size: 8vw;
+
+  @include tablet {
+    font-size: 2.8em;
+  }
+
+  @include desktop{
+    font-size: 2.2em;
+    margin-top: 1rem;
+  }
+}
+
+.skills h5 {
   display: inline;
+  font-family: $copy-font;
+  font-size: 4.5vw;
+
+  @include tablet {
+    font-size: 1.4em;
+  }
+
+  @include desktop{
+    font-size: 1em;
+  }
 }
 
 .pdfWrapper h5 {
@@ -262,6 +295,10 @@ h3#aboutButton, h3#blogButton {
   @include tablet {
     font-size: 2.5em;
     margin-top: 2rem;
+  }
+
+  @include desktop{
+    font-size: 2.2em;
   }
 }
 
@@ -276,6 +313,11 @@ h3#aboutButton, h3#blogButton {
     margin-top: 3rem;
     margin-left: 1.6rem;
   }
+
+  @include desktop{
+    font-size: 1.4em;
+    margin-top: 3.2rem;
+  }
 }
 
 .emailWrapper a {
@@ -285,12 +327,17 @@ h3#aboutButton, h3#blogButton {
   padding-bottom: 1vw;
   color: black;
   float: right;
-  margin-top: 3vw;
+  margin-top: 3.25vw;
 
   @include tablet {
-    font-size: 1.5em;
-    margin-top: .75rem;
+    font-size: 1.75em;
+    margin-top: 1.25rem;
     padding-bottom: .25rem;
+  }
+
+  @include desktop{
+    font-size: 1.4em;
+    margin-top: 1rem;
   }
 }
 
