@@ -5,97 +5,143 @@ body {
 header {
   text-align: center;
 
-    @include tablet {
-      margin-top: 1rem;
-      text-align: right;
-    }
+  @include tablet {
+    margin-top: 1rem;
+    text-align: right;
+  }
 
-    @include desktop {
-        float: right;
-        width: 600px;
-        clear: both;
-        margin-top: -1.75rem;
-        margin-right: 1rem;
-    }
+  @include desktop {
+    float: right;
+    width: 600px;
+    clear: both;
+    margin-top: -1.75rem;
+    margin-right: 1rem;
+  }
 }
 
 section.worktypebuttons {
-    @include desktop {
-        margin-top: 5rem;
-    }
+  @include desktop {
+    margin-top: 5rem;
+  }
 }
 
-section.sitesection {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: scroll;
 
-    @include desktop {
-      width: 80%;
-      left: 20%;
-    }
+//*** Basic Section Styles ***//
+section.siteSection {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: scroll;
+
+  @include desktop {
+    width: 80%;
+    left: 20%;
+  }
 }
 
-section#websection {
-  background-color: $fuschia;
+section#sectionOne {
+  background-color: $rich-blue;
   display: none;
 }
 
-.webSection #websection {
+.sectionOne #sectionOne {
   display: block;
 }
 
-section#writingsection {
-  background-color: $teal;
+section#sectionTwo {
+  background-color: $duck-blue;
   display: none;
 }
 
-.writingSection #writingsection {
+.sectionTwo #sectionTwo {
   display: block;
 }
 
-section#photosection {
-  background-color: $gold;
+section#sectionThree {
+  background-color: $grey-blue;
   display: none;
 }
 
-.photoSection #photosection {
+.sectionThree #sectionThree {
   display: block;
 }
 
-section#musicsection {
-  background-color: $green;
+section#sectionFour {
+  background-color: $maroon;
   display: none;
 }
 
-.musicSection #musicsection {
+.sectionFour #sectionFour {
   display: block;
 }
 
-section#aboutsection, section#blogsection {
+section#aboutSection, section#blogSection {
   background-color: $white;
   display: none;
 }
 
-.aboutSection #aboutsection, .blogSection #blogsection  {
+.aboutSection #aboutSection, .blogSection #blogSection  {
   display: block;
 }
 
-section#aboutsection:hover, section#blogsection:hover {
+section#aboutSection:hover, section#blogSection:hover {
    cursor: url(../img/trackglove_cursorBlack.png), auto;
 }
 
-//*** SECTION STYLES ***//
 
-div.articleWrapper {
+//*** Section Interior Styles ***//
+
+//** Project Moelcule Styles **//
+article.projectContainer {
   width: 95%;
+  max-width: 1000px;
   margin: auto;
-  margin-top: 7rem;
+  margin-bottom: 4rem;
+  border: 1px solid $white;
+  background-color: $transBlack;
+  -webkit-box-shadow: 0px 5px 8px 0px rgba(28,38,48,1);
+  -moz-box-shadow: 0px 5px 8px 0px rgba(28,38,48,1);
+  box-shadow: 0px 5px 8px 0px rgba(28,38,48,1);
+
+  @include desktop {
+    margin: 5rem 2rem 4rem;
+  }
 }
 
+div.projectHeader {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid $white;
+  height: 14vw;
+
+  @include laptop {
+    height: 80px;
+  }
+}
+
+div.projectCopy {
+  width: 95%;
+  max-width: 700px;
+  margin: auto;
+  margin-top: 1.5rem;
+
+  @include desktop {
+    width: 45%;
+    float: right;
+    margin-top: 0;
+    margin-right: 1rem;
+  }
+}
+
+div.projectLink {
+  text-align: right;
+  border-top: 1px solid $white;
+  margin-top: 2rem;
+}
+
+
+//** About Section Molecules **//
 article.skills {
   width: 95%;
   max-width: 550px;
@@ -117,7 +163,6 @@ article.skills {
 div.skill {
   margin-top: 1rem;
 }
-
 
 article.aboutFooter {
   width: 95%;
@@ -162,44 +207,3 @@ div.socialWrapper {
     margin-top: 1.5rem;
   }
 }
-
-
-
-
-
-
-//*** FOOTER ***//
-/***** Footer not in use currently
-
-footer {
-  display: none;
-  height: 400px;
-  background-color: $black;
-  width: 100%;
-  position: relative;
-
-    @include tablet {
-      height: 200px;
-    }
-}
-
-
-
-div.footmobiletextures {
-
-  @include tablet {
-    display: none;
-  }
-}
-
-div.socmedia {
-  text-align: center;
-  padding-top: 3rem;
-
-    @include tablet {
-      text-align: right;
-      padding-right: 3rem;
-    }
-}
-
-*****/

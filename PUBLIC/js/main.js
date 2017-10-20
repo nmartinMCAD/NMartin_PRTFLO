@@ -1,29 +1,29 @@
 //Using jQuery
 $(function() {
-	$("h3#webButton").click(function() {
+	$("h3#buttonOne").click(function() {
 		$("body").removeClass();
-		$("body").addClass("webSection");
+		$("body").addClass("sectionOne");
 	});
 });
 
 $(function() {
-	$("h3#writingButton").click(function() {
+	$("h3#buttonTwo").click(function() {
 		$("body").removeClass();
-		$("body").addClass("writingSection");
+		$("body").addClass("sectionTwo");
 	});
 });
 
 $(function() {
-	$("h3#photoButton").click(function() {
+	$("h3#buttonThree").click(function() {
 		$("body").removeClass();
-		$("body").addClass("photoSection");
+		$("body").addClass("sectionThree");
 	});
 });
 
 $(function() {
-	$("h3#musicButton").click(function() {
+	$("h3#buttonFour").click(function() {
 		$("body").removeClass();
-		$("body").addClass("musicSection");
+		$("body").addClass("sectionFour");
 	});
 });
 
@@ -42,7 +42,7 @@ $(function() {
 });
 
 $(function() {
-	$(".sitesection i").click(function() {
+	$(".siteSection i").click(function() {
 		$("body").removeClass();
 	});
 });

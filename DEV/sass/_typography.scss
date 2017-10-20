@@ -1,13 +1,17 @@
 html {
   font-family: $copy-font;
-  font-weight: $copy-weight;
+  color: $white;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
   cursor: url(../img/trackglove_cursor.png), auto;
 }
 
-a, input, h3, i {
+a, input, .worktypebuttons h3, i {
    cursor: url(../img/trackglove_cursorlink.png), auto;
+ }
+
+ p, h4, h5 {
+   cursor: text;
  }
 
 h1 {
@@ -17,22 +21,22 @@ h1 {
   text-transform: uppercase;
   padding-top: 1rem;
 
-    @include tablet {
-      font-size: 3.8em;
-      padding-right: 2rem;
-    }
+  @include tablet {
+    font-size: 3.8em;
+    padding-right: 2rem;
+  }
 
-    @include laptop {
-      font-size: 5em;
-    }
+  @include laptop {
+    font-size: 5em;
+  }
 
-    @include desktop {
-      padding-top: 0;
-    }
+  @include desktop {
+    padding-top: 0;
+  }
 }
 
 h2 {
-  color: $dark-gold;
+  color: $gold;
   font-size: 6vw;
   letter-spacing: 1.2vw;
 
@@ -59,24 +63,24 @@ h2 {
   margin-bottom: 1rem;
   padding-left: 1rem;
 
-    @include tablet {
-      font-size: 3em;
-      margin-left: -1px;
-      text-align: right;
-      padding-left: 0;
-      padding-right: 1rem;
-    }
+  @include tablet {
+    font-size: 3em;
+    margin-left: -1px;
+    text-align: right;
+    padding-left: 0;
+    padding-right: 1rem;
+  }
 
-    @include desktop {
-      font-size: 3em;
-      margin-top: 1rem;
+  @include desktop {
+    font-size: 3em;
+    margin-top: 1rem;
   }
 }
 
 
-h3#webButton {
-  color: $fuschia;
-  border: 1px solid $fuschia;
+h3#buttonOne {
+  color: $rich-blue;
+  border: 1px solid $rich-blue;
 
   @include tablet {
     width: 70%;
@@ -91,15 +95,15 @@ h3#webButton {
   }
 }
 
-h3#webButton:hover {
-  background-color: $fuschia;
+h3#buttonOne:hover {
+  background-color: $rich-blue;
   color: $white;
 }
 
 
-h3#writingButton {
-  color: $teal;
-  border: 1px solid $teal;
+h3#buttonTwo {
+  color: $duck-blue;
+  border: 1px solid $duck-blue;
 
   @include tablet {
     width: 52.5%;
@@ -114,14 +118,14 @@ h3#writingButton {
   }
 }
 
-h3#writingButton:hover {
-  background-color: $teal;
+h3#buttonTwo:hover {
+  background-color: $duck-blue;
   color: $white;
 }
 
-h3#photoButton {
-  color: $gold;
-  border: 1px solid $gold;
+h3#buttonThree {
+  color: $grey-blue;
+  border: 1px solid $grey-blue;
 
   @include tablet {
     width: 60%;
@@ -136,14 +140,14 @@ h3#photoButton {
   }
 }
 
-h3#photoButton:hover {
-  background-color: $gold;
+h3#buttonThree:hover {
+  background-color: $grey-blue;
   color: $white;
 }
 
-h3#musicButton {
-  color: $green;
-  border: 1px solid $green;
+h3#buttonFour {
+  color: $maroon;
+  border: 1px solid $maroon;
   margin-bottom: 4rem;
 
   @include tablet {
@@ -159,18 +163,17 @@ h3#musicButton {
   }
 }
 
-h3#musicButton:hover {
-  background-color: $green;
+h3#button4:hover {
+  background-color: $maroon;
   color: $white;
 
 }
 
 h3#aboutButton, h3#blogButton {
-    color: $white;
-    border: 1px solid $white;
-    text-align: right;
-    padding-right: 1.5rem;
-
+  color: $white;
+  border: 1px solid $white;
+  text-align: right;
+  padding-right: 1.5rem;
 
   @include tablet {
     width: 35%;
@@ -186,43 +189,38 @@ h3#aboutButton, h3#blogButton {
 }
 
 
-//*** SECTION STYLES ***//
-.sitesection i {
-  color: $white;
-  font-size: 3em;
-  position: absolute;
-  top: 1rem;
-  left: 2.5%;
-}
+//** Section Open - Section Controller Styles **//
 
-.webSection .worktypebuttons h3, .writingSection .worktypebuttons h3, .photoSection .worktypebuttons h3, .musicSection .worktypebuttons h3, .aboutSection .worktypebuttons h3, .blogSection .worktypebuttons h3 {
+.sectionOne .worktypebuttons h3, .sectionTwo .worktypebuttons h3, .sectionThree .worktypebuttons h3, .sectionFour .worktypebuttons h3, .aboutSection .worktypebuttons h3 , .blogSection .worktypebuttons h3 {
   text-align: left;
   padding-left: 1.5rem;
   width: 100%;
+  font-size: 3.2vw;
 }
 
-.webSection #webButton {
-  background-color: $fuschia;
+.sectionOne #buttonOne, .sectionTwo #buttonTwo, .sectionThree #buttonThree, .sectionFour #buttonFour {
   color: $white;
   pointer-events: none;
 }
 
-.writingSection #writingButton {
-  background-color: $teal;
-  color: $white;
-  pointer-events: none;
+.sectionOne #buttonOne {
+  background-color: $rich-blue;
 }
 
-.photoSection #photoButton {
-  background-color: $gold;
-  color: $white;
-  pointer-events: none;
+.sectionTwo #buttonTwo {
+  background-color: $duck-blue;
 }
 
-.musicSection #musicButton {
-  background-color: $green;
-  color: $white;
-  pointer-events: none;
+.sectionThree #buttonThree {
+  background-color: $grey-blue;
+}
+
+.sectionFour #buttonFour {
+  background-color: $maroon;
+}
+
+.aboutSection, .blogSection {
+  color: $black;
 }
 
 .aboutSection #aboutButton, .blogSection #blogButton {
@@ -231,15 +229,102 @@ h3#aboutButton, h3#blogButton {
   pointer-events: none;
 }
 
+//** Section Interior Styles **//
+.siteSection h4 {
+  font-family: $header-font;
+  color: $white;
+  font-size: 4em;
+  margin-top: -.5rem;
+  margin-left: 2.5%;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.siteSection i {
+  color: $white;
+  font-size: 3.4em;
+  position: absolute;
+  top: 1.2rem;
+  right: 2.5%;
+
+  @include desktop {
+    top: .8rem;
+  }
+}
+
 .aboutSection i, .blogSection i {
   color: $black;
 }
 
-.sitesection h4 {
+//** Project Molecule Styles **//
+.projectHeader h5 {
   font-family: $header-font;
-  font-size: 10vw;
+  font-size: 8vw;
+  text-transform: lowercase;
+  display: inline;
+  float: right;
+  padding-right: 4vw;
+  color: $white;
+
+  @include laptop {
+    font-size: 3.5em;
+    margin-top: -.6rem;
+    padding-right: 2rem;
+  }
 }
 
+.projectHeader i {
+  font-size: 10vw;
+  position: static;
+  border-right: 1px solid $white;
+  float: left;
+  height: 14vw;
+  padding: .5rem 1rem 0 1rem;
+
+  @include laptop {
+    font-size: 4em;
+    height: 80px;
+  }
+}
+
+.projectCopy p {
+  color: $white;
+  font-size: 3.8vw;
+
+  @include tablet {
+    font-size: 17px;
+  }
+}
+
+.projectLink i {
+  position: static;
+  font-size: 8vw;
+  color: $white;
+  border-left: 1px solid $white;
+  padding: 1rem 0 1rem 1rem;
+
+  @include laptop {
+    font-size: 2em;
+  }
+}
+
+.projectLink a {
+  display: inline;
+  text-align: right;
+  margin-top: 2rem;
+  color: $white;
+  text-decoration: none;
+  font-size: 8vw;
+  padding-right: 1rem;
+
+  @include laptop {
+    font-size: 2em;
+  }
+}
+
+//* About Section Styles *//
 article.bioMolecule p {
   margin-top: 1rem;
   line-height: 1.5;
@@ -258,8 +343,7 @@ article.bioMolecule p {
   }
 }
 
-.skills h4 {
-  font-family: $copy-font;
+.skills h5 {
   font-size: 8vw;
 
   @include tablet {
@@ -272,7 +356,7 @@ article.bioMolecule p {
   }
 }
 
-.skills h5 {
+.skills h6 {
   display: inline;
   font-family: $copy-font;
   font-size: 4.5vw;
@@ -340,25 +424,3 @@ article.bioMolecule p {
     margin-top: 1rem;
   }
 }
-
-
-/***** FOOTER (not currently in use)
-div.socmedia i {
-  color: $white;
-}
-
-i.fa-facebook-official, i.fa-linkedin-square, i.fa-instagram, i.fa-tumblr-square {
-  font-size: 3.6em;
-}
-
-footer p {
-  text-align: center;
-  color: $white;
-  margin-top: 2rem;
-
-    @include tablet {
-      text-align: right;
-      padding-right: 3rem;
-    }
-}
-*****/
