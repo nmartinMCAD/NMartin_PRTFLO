@@ -37,6 +37,15 @@ img.pagebg {
   }
 }
 
+img.mobileOnly {
+  max-width: 195px;
+
+  @include desktop {
+    margin-left: 15%;
+  }
+
+}
+
 //** About Section Images **//
 .bioMolecule img {
   width: 100%;
@@ -44,7 +53,7 @@ img.pagebg {
 
   @include laptop {
     width: 75%;
-    margin-left: 20%;
+    margin-left: 5%;
   }
 
   @include desktop {
@@ -58,10 +67,14 @@ img.pagebg {
   display: inline;
   width: 70%;
   float: right;
+  margin-top: .5vw;
+
+  @include laptop {
+    margin-top: 0;
+  }
 
   @include desktop{
     width: 65%;
-    margin-top: .1rem;
   }
 }
 
@@ -86,10 +99,10 @@ img#emailLogo {
 }
 
 .socialWrapper img {
-  width: 22.5%;
-  max-width: 150px;
+  width: 20vw;
+  max-width: 125px;
 
-  @include desktop{
-    width: 20%;
+  @include desktop {
+    max-width: 85px;
   }
 }
