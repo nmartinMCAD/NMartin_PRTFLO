@@ -1,5 +1,7 @@
+/*** GLOBAL STYLES ***/
+
 html {
-  font-family: $copy-font;
+  font-family: $header-font;
   color: $white;
   font-size: 16px;
   line-height: 1.6;
@@ -8,75 +10,104 @@ html {
 
 a, input, .worktypebuttons h3, i, div.showMore, div.showLess {
    cursor: url(../img/trackglove_cursorlink.png), auto;
- }
+}
+
+a {
+  color: $white;
+}
 
 p {
    cursor: text;
- }
+}
 
 h1 {
-  font-family: $header-font;
   font-size: 13vw;
-  color: $white;
   text-transform: uppercase;
   padding-top: 1rem;
+  letter-spacing: 1vw;
 
   @include tablet {
     font-size: 3.8em;
     padding-right: 2rem;
+    line-height:1;
   }
 
   @include laptop {
     font-size: 5em;
+    letter-spacing: .1em;
   }
 
   @include desktop {
+    font-size: 7em;
     padding-top: 0;
   }
 }
 
 h2 {
   color: $gold;
-  font-size: 6vw;
-  letter-spacing: 1.2vw;
+  font-size: 7vw;
+  letter-spacing: 1.5vw;
 
   @include tablet {
     font-size: 1.5em;
-    letter-spacing: .33em;
+    letter-spacing: .35em;
     padding-right: 2rem;
   }
 
   @include laptop {
     font-size: 2em;
   }
+
+  @include desktop {
+    font-size: 2.65em;
+    line-height: 1.2;
+  }
+}
+
+h2 span {
+  display: none;
+
+  @include desktop {
+    display: inline;
+    letter-spacing: 0;
+  }
+}
+
+header br {
+  @include desktop {
+    display: inline;
+  }
 }
 
 
 /*** SECTION CONTROLLERS ***/
+
 .worktypebuttons h3 {
   margin: auto;
   width: 95%;
-  display: block;
-  font-family: $header-font;
   font-size: 10vw;
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding-left: 1rem;
+  text-transform: uppercase;
 
   @include tablet {
-    font-size: 3em;
+    font-size: 2.25em;
     margin-left: -1px;
     text-align: right;
     padding-left: 0;
     padding-right: 1rem;
   }
 
+  @include laptop {
+    font-size: 2.5em;
+  }
+
   @include desktop {
-    font-size: 3em;
+    font-size: 2.75em;
     margin-top: 1rem;
   }
 }
-
 
 h3#buttonOne {
   color: $duck-blue;
@@ -148,8 +179,8 @@ h3#buttonThree:hover {
 /* Disabled button to be reactivated as sections are added
 
 h3#buttonFour {
-  color: $maroon;
-  border: 1px solid $maroon;
+  color:;
+  border: 1px solid;
 
   @include tablet {
     width: 55%;
@@ -165,7 +196,7 @@ h3#buttonFour {
 }
 
 h3#button4:hover {
-  background-color: $maroon;
+  background-color:;
   color: $white;
 }
 
@@ -201,7 +232,11 @@ h3#aboutButton {
   text-align: left;
   padding-left: 1.5rem;
   width: 100%;
-  font-size: 3.2vw;
+  font-size: 3vw;
+
+  @include megaScreen {
+    font-size: 3em;
+  }
 }
 
 .sectionOne #buttonOne, .sectionTwo #buttonTwo, .sectionThree #buttonThree, .sectionFour #buttonFour {
@@ -224,7 +259,7 @@ h3#aboutButton {
 /* diasbled style to be reactivated as sections are added
 
 .sectionFour #buttonFour {
-  background-color: $maroon;
+  background-color:;
 }
 
 */
@@ -239,16 +274,18 @@ h3#aboutButton {
   pointer-events: none;
 }
 
+
 //** Section Interior Styles **//
+
 .sectionHeader h4 {
-  font-family: $header-font;
-  color: $white;
-  font-size: 14vw;
-  margin-top: -1vw;
+  font-size: 10vw;
   margin-left: 2.5%;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: $white;
 
   @include tablet {
-    font-size: 4em;
+    font-size: 3.8em;
     margin-top: -.25rem;
   }
 
@@ -258,15 +295,15 @@ h3#aboutButton {
 }
 
 .sectionHeader i {
-  color: $white;
-  font-size: 12vw;
+  font-size: 9.5vw;
   position: absolute;
-  top: 5vw;
+  top: 2vw;
   right: 2.5%;
+  color: $white;
 
   @include tablet {
-    font-size: 3.4em;
-    top: 1.5rem;
+    font-size: 3.8em;
+    top: .5rem;
   }
 
   @include desktop {
@@ -283,24 +320,21 @@ h3#aboutButton {
   }
 }
 
-.aboutSection i, .blogSection i {
-  color: $black;
-}
 
 //** Project Molecule Styles **//
+
 .projectHeader h5 {
-  font-family: $header-font;
   font-size: 8vw;
   text-transform: lowercase;
   display: inline;
   float: right;
-  padding-right: 4vw;
-  color: $white;
+  padding: 0 3% 0 0;
 
   @include laptop {
     font-size: 3.5em;
-    margin-top: -.6rem;
-    padding-right: 2rem;
+    margin-top: -.25rem;
+    padding: 0 2rem 0 0;
+    height: 75px;
   }
 }
 
@@ -309,12 +343,12 @@ h3#aboutButton {
   position: static;
   border-right: 1px solid $white;
   float: left;
-  height: 14vw;
+  height: 15vw;
   padding: .5rem 1rem 0 1rem;
 
   @include laptop {
     font-size: 4em;
-    height: 80px;
+    height: 90px;
   }
 }
 
@@ -327,12 +361,15 @@ h3#aboutButton {
 }
 
 .projectCopy p, .addlProjectInfo p, code {
-  color: $white;
   font-size: 3.8vw;
 
   @include tablet {
     font-size: 1em;
   }
+}
+
+.projectCopy p, .addlProjectInfo p {
+  font-family: $project-copy;
 }
 
 .showMore i {
@@ -346,6 +383,7 @@ h3#aboutButton {
 
 .showMore h3 {
   display: inline;
+  text-shadow: 2px 2px $black;
   margin-left: .5rem;
   font-size: 5vw;
 
@@ -354,39 +392,84 @@ h3#aboutButton {
   }
 }
 
-.projectLink i {
+.addlInfoCopy h3 {
+  display: inline;
+  border-bottom: 1px solid $white;
+  padding-bottom: .25rem;
+  font-size: 5vw;
+  text-shadow: 2px 2px $black;
+
+  @include tablet {
+    font-size: 1.2em;
+  }
+}
+
+.addlInfoCopy p {
+  margin-top: 1rem;
+}
+
+.addlInfoBox a {
+  display: block;
+  max-width: 700px;
+  margin: auto;
+  margin-top: 1rem;
+  text-align: right;
+  font-size: 1.2em;
+
+  @include desktop {
+    margin: 1rem 0 3rem 2.5%;
+  }
+}
+
+.addlInfoCopy a {
+  font-size: 1em;
+  display: inline;
+  margin: 0;
+  text-align: none;
+}
+
+a.projectLink {
+  text-decoration: none;
+}
+
+.projectLinkContent i {
   position: static;
   font-size: 8vw;
-  color: $white;
   border-left: 1px solid $white;
   padding: 1rem 0 1rem 1rem;
+  text-shadow: 2px 2px $black;
 
   @include laptop {
     font-size: 2em;
   }
 }
 
-.projectLink a {
+.projectLinkContent h5 {
   display: inline;
   text-align: right;
   margin-top: 2rem;
-  color: $white;
-  text-decoration: none;
   font-size: 6vw;
   padding-right: 1rem;
+  text-shadow: 2px 2px $black;
 
   @include laptop {
     font-size: 2em;
   }
 }
 
+
 //* About Section Styles *//
+
+.aboutSection p, .aboutSection h5, .aboutSection h6 {
+  font-family: $project-copy;
+}
+
 .aboutSection a {
   color: $black;
   text-decoration: none;
 }
 
-article.bioMolecule p {
+.bioContainer p {
   width: 95%;
   margin: auto;
   margin-top: 1rem;
@@ -407,6 +490,14 @@ article.bioMolecule p {
   }
 }
 
+.Bio2 p {
+  @include desktop {
+    float: left;
+    width: 50%;
+    margin-left: 0;
+  }
+}
+
 .skills h5 {
   font-size: 8vw;
 
@@ -422,8 +513,7 @@ article.bioMolecule p {
 
 .skills h6 {
   display: inline;
-  font-family: $copy-font;
-  font-size: 4.5vw;
+  font-size: 4vw;
 
   @include tablet {
     font-size: 1.4em;

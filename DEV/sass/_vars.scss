@@ -1,9 +1,5 @@
-$header-font: 'Permanent Marker', cursive;
-$copy-font: 'Noto Sans', Helvetica, sans-serif;
-$deco-font: 'Press Start 2P', 'Rubik', Helvetica;
-
-$subhead-weight: 700;
-$copy-weight: 400;
+$header-font: 'Jura', cursive;
+$project-copy: 'Noto Sans';
 
 //*colors*//
 
@@ -11,22 +7,18 @@ $white: #fff;
 $black: #1C2630;
 $transBlack: hsla(210, 26%, 15%, 0.6);
 $transBlackDark: hsla(210, 26%, 15%, 0.8);
-$rich-blue: #207FA6;
 $duck-blue: #589CA7;
 $grey-blue: #3A6671;
 $gold: #D77A2C;
 $maroon: #8C2540;
 $grey: #424B5E;
-$green: #0A5058;
-$white-green: #82F0E8;
-$purple: #8D1473;
-$oracle: #375259;
 
 //*media queries*//
 
 $tablet-width: "screen and (min-width: 480px)";
 $laptop-width: "screen and (min-width: 760px)";
 $desktop-width: "screen and (min-width: 1080px)";
+$mega-width: "screen and (min-width: 1500px)";
 
 //*mixins*//
 
@@ -44,6 +36,12 @@ $desktop-width: "screen and (min-width: 1080px)";
 
 @mixin desktop {
   @media #{$desktop-width} {
+    @content;
+  }
+}
+
+@mixin megaScreen {
+  @media #{$mega-width} {
     @content;
   }
 }

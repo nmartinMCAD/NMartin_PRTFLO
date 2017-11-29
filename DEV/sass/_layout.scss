@@ -1,12 +1,18 @@
+/*** Global Styles ***/
+
 body {
   background-color: $black;
 }
 
 header {
-  text-align: center;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 12vw;
+  text-align: left;
 
   @include tablet {
     margin-top: 1rem;
+    margin-bottom: 2rem;
     text-align: right;
   }
 
@@ -14,7 +20,7 @@ header {
     float: right;
     width: 600px;
     clear: both;
-    margin-top: -1.75rem;
+    margin-top: -1.65rem;
     margin-right: 1rem;
   }
 }
@@ -27,6 +33,7 @@ section.worktypebuttons {
 
 
 //*** Basic Section Styles ***//
+
 section.siteSection {
   height: 100%;
   width: 100%;
@@ -72,7 +79,7 @@ section#sectionThree {
 /* Disabled section to be reactivated as sections are added
 
 section#sectionFour {
-  background-color: $maroon;
+  background-color:;
   display: none;
 }
 
@@ -102,13 +109,14 @@ section#aboutSection:hover, section#blogSection:hover {
 //** Project Moelcule Styles **//
 div.sectionHeader {
   width: 100%;
-  height: 22vw;
+  height: 15vw;
   background-color: $transBlackDark;
   position: fixed;
+  top: 0;
   z-index: 10;
 
   @include tablet {
-    height: 6rem;
+    height: 5rem;
   }
 
   @include desktop {
@@ -119,11 +127,10 @@ div.sectionHeader {
 }
 
 div.sectionContentWrapper {
-  margin-top: 30vw;
-
+  margin-top: 20vw;
 
   @include tablet {
-    margin-top: 10rem;
+    margin-top: 6rem;
   }
 
   @include desktop {
@@ -141,18 +148,14 @@ article.projectContainer {
   -webkit-box-shadow: 0px 3px 5px 0px rgba(28,38,48,1);
   -moz-box-shadow: 0px 3px 5px 0px rgba(28,38,48,1);
   box-shadow: 0px 3px 5px 0px rgba(28,38,48,1);
-
-  @include desktop {
-
-  }
 }
 
 div.projectHeader {
   border-bottom: 1px solid $white;
-  height: 14vw;
+  height: 15vw;
 
   @include laptop {
-    height: 80px;
+    height: 90px;
   }
 }
 
@@ -209,83 +212,108 @@ div.showMore {
 }
 
 div.addlProjectInfo {
-  display: none;
-  margin-bottom: 2rem;
-}
-
-div.codeBox {
-  margin-bottom: 3rem;
-}
-
-div.codeBox p {
   width: 95%;
   max-width: 700px;
   margin: auto;
+  display: none;
+  margin-bottom: 2rem;
 
   @include desktop {
     margin: 0;
     margin-left: 2.5%;
-    width: 700px;
   }
 }
 
+div.addlInfoBox {
+  margin-bottom: 3rem;
+}
+
 pre.codeBlock {
-  width: 95%;
-  max-width: 700px;
-  margin: auto;
   font-family: monospace;
   margin-top: 2rem;
   text-align: left;
   background-color: $black;
-  overflow: auto;
   padding: .5rem;
   border: 1px solid $white;
   max-height: 500px;
+  white-space: nowrap;
+  overflow: auto;
 
   @include desktop {
-    margin: 2rem 5% 3rem 0;
-    width: 700px;
-    float: right;
+    margin: 2rem 0 3rem 0;
   }
 }
 
-div.projectLink {
+div.borderBreak {
+  border-bottom: 1px solid $white;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+}
+
+div.projectLinkContent {
   text-align: right;
   border-top: 1px solid $white;
+  margin-top: 2rem;
 }
 
 
 //** About Section Molecules **//
-article.bioMolecule {
-  margin-top: 6rem;
+
+article.bioContainer {
+  margin-top: 15vw;
+
+  @include tablet {
+    margin-top: 5rem;
+  }
 
   @include desktop {
     width: 95%;
+    max-width: 1100px;
     margin: auto;
-    margin-top: 6rem;
+    margin-top: 5.5rem;
   }
 }
 
-article.skillsContactWrapper {
+div.Bio2 {
+  margin: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  @include tablet {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  @include laptop {
+    margin: 3rem 0 3rem 5%;
+  }
+
+  @include desktop {
+    margin-top: 5rem;
+    margin-left: 0;
+  }
+}
+
+div.skillsContactWrapper {
   margin: auto;
   width: 95%;
-  max-width: 1440px;
+  max-width: 1100px;
+  margin-top: 4rem;
+
+  @include desktop {
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+  }
 }
 
 article.skills {
-  width: 95%;
   max-width: 550px;
   margin: auto;
-  margin-top: 16vw;
-
-  @include tablet {
-    margin-top: 4rem;
-  }
 
   @include desktop {
     width: 45%;
     float: left;
-    margin-top: 1rem;
     max-width: 500px;
   }
 }
@@ -295,11 +323,10 @@ div.skill {
 }
 
 article.aboutFooter {
-  width: 95%;
   max-width: 550px;
   margin: auto;
-  margin-top: 16vw;
-  margin-bottom: 8vw;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 
   @include tablet {
     margin-top: 6rem;
@@ -311,7 +338,6 @@ article.aboutFooter {
     margin-right: 2rem;
     margin-top: 0;
     max-width: 450px;
-    margin-bottom: 4rem;
   }
 }
 

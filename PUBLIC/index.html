@@ -6,16 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nick Martin &mdash; PORTFOLIO</title>
   <link rel="stylesheet" href="css/css.css">
-  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Noto+Sans:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Jura:300|Noto+Sans:400,700" rel="stylesheet">
   <script src="https://use.fontawesome.com/b82efc198e.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
 </head>
 
 <body class="">
   <img class="pagebg" src="img/circuitrytexture.svg" alt="background circuitry texture">
+
   <header>
       <h1>Nick Martin</h1>
-      <h2>interactive_developer</h2>
+      <h2>interactive<br><span>>_</span>developer</h2>
   </header>
 
 <main>
@@ -24,19 +25,25 @@
       <h3 class="sectionButton" id="buttonTwo">design</h3>
       <h3 class="sectionButton" id="buttonThree">marketing</h3>
 
-      <!-- Diasbled buttons to be reactivated as new sections are created
+      <!-- Diasbled button to be reactivated as new sections are created
 
       <h3 class="sectionButton" id="buttonFour">music</h3>
 
       -->
 
       <h3 class="sectionButton" id="aboutButton">about</h3>
+
+      <!-- Diasbled button to be reactivated as new sections are created
+
       <h3 class="sectionButton" id="blogButton">blog</h3>
+
+      -->
+
   </section>
 
   <section class="siteSection" id="sectionOne">
     <div class="sectionHeader">
-      <h4>dev</h4>
+      <h4>development</h4>
       <i class="fa fa-times" aria-hidden="true"></i>
     </div>
 
@@ -44,493 +51,7 @@
       <article class="projectContainer">
         <div class="projectHeader">
           <i class="fa fa-code" aria-hidden="true"></i>
-          <h5>Covalent</h5>
-        </div>
-
-        <div class="projectTechContainer">
-          <p>HTML5 / CSS3 / GitHub</p>
-        </div>
-
-        <div class="clearfix"></div>
-
-        <a href="http://nmartin.studio.mcad.edu/webdesignprinciples/Final/covalent/index.html" target="_blank"><img src="img/covalent_showcase.png" alt=""></a>
-
-        <div class="projectCopy">
-          <p>Website completed as final project for Web Design Principles at MCAD. The site is intended to be a platform for science-fiction creatives of various mediums: writing, film, illustration, etc. It was through this project that I learned the value of a templated approach to webpages. The site is was also built to be responsive using media queries.</p>
-        </div>
-
-        <div class="clearfix"></div>
-
-        <div class="showMore">
-          <h3>more info</h3>
-        </div>
-
-        <div class="addlProjectInfo">
-          <div class="codeBox">
-            <p>CSS code that tells the search input on the home page to fade in slower
-            than previously faded elements. I was also able to manipulate the input field's
-            inset color once clicked to be more in line with site's design; a sci-fi green
-            as opposed to the browser's standard blue.</p>
-            <pre class="codeBlock"><code>
-.slower-fade {
-  position: absolute;
-  top: 3%;
-  right: 9.2%;
-  opacity:0;
-  -webkit-animation:fadeIn ease-in 1;
-  -moz-animation:fadeIn ease-in 1;
-  animation:fadeIn ease-in 1;
-
-  -webkit-animation-fill-mode:forwards;
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
-
-  -webkit-animation-duration:2s;
-  -moz-animation-duration:2s;
-  animation-duration:2s;
-  animation-delay: 3s;
-}
-
-.slower-fade input {
-  font-family: "mr-eaves-sans", Helvetica, Arial, sans-serif;
-  font-size: 1.6em;
-  color: #fff;
-  margin-right: .4em;
-  width: 290px;
-  background-color: #B72D03;
-  border: none;
-  border-bottom: 1px solid #fff;
-  transition: border 0.3s;
-}
-
-.slower-fade input[type=text]:focus {
-  outline: none;
-  border-color: #9EFFCA;
-  outline: 0;
-  -webkit-box-shadow: inset 0 -15px 15px -15px rgba(158, 255, 202, 1.00), 0 0 0 0 rgba(158, 255, 202, 1.00);
-  box-shadow: inset 0 -15px 15px -15px rgba(158, 255, 202, 1.00), 0 0 0 0 rgba(158, 255, 202, 1.00);
-}</code></pre>
-          </div>
-
-          <div class="clearfix"></div>
-
-          <div class="codeBox">
-            <p>HTML head code in which I deployed separate stylesheets for templated elements.
-            The navbar and footer were the same across all pages, so I decided to code the css in a separate stylesheet
-            and call them on each page, as opposed to copying that code into the stylesheets for all the different pages,
-            which each have their own stylesheet depending on the page type. This was before I began using Sass in my
-            development process, so I would approach differently were I building the site now however, at the time I felt it
-            was an efficient approach to applying a CSS template across the site.</p>
-            <pre class="codeBlock"><code>
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-  &lt;title&gt;Covalent&lt;/title&gt;
-  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;../css/navbar-footer.css&quot;&gt;
-  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;../css/category.css&quot;&gt;
-  &lt;script src=&quot;https://use.fontawesome.com/78cae2334f.js&quot;&gt;&lt;/script&gt;
-  &lt;script src=&quot;https://use.typekit.net/qts0ucf.js&quot;&gt;&lt;/script&gt;
-  &lt;script&gt;try{Typekit.load({ async: true });}catch(e){}&lt;/script&gt;
-&lt;/head&gt;
-</code></pre>
-          </div>
-
-          <div class="clearfix"></div>
-
-          <div class="codeBox">
-            <p>Deploying a media query to initiate a repositioning of the filter buttons on the category
-            subpages.</p>
-            <pre class="codeBlock"><code>
-.filters {
-  margin: auto;
-  max-width: 460px;
-  background-color: #fff;
-  margin-top: 9em;
-  margin-left: 1em;
-}
-
-.filters a {
-  color: #67a784;
-  -webkit-box-shadow: 0px 2px 5px 0px rgba(204,204,204,1);
-  -moz-box-shadow: 0px 2px 5px 0px rgba(204,204,204,1);
-  box-shadow: 0px 2px 5px 0px rgba(204,204,204,1);
-  text-decoration: none;
-  font-family: "Jaapokki", Helvetica, Arial, sans-serif;
-  font-size: 5.9vw;
-  letter-spacing: .1em;
-  border: 1px solid #67a784;
-  background-color: #fff;
-}
-
-.filters a:hover {
-  background-color: #9EFFCA;
-  border-color: #9EFFCA;
-  color: #fff;
-  text-shadow: none;
-}
-
-@media (min-width: 1000px){
-
-/*filter buttons*/
-
-.filters a {
-  font-size: 2rem;
-}
-
-.fiction {
-  position: fixed;
-  left: 43px;
-  top: 228px;
-  height: 108px;
-  width: 45px;
-  margin: 0;
-  padding: 0;
-  z-index: 9999;
-  display: inline;
-  -ms-transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-}</code></pre>
-          </div>
-
-          <div class="clearfix"></div>
-        </div>
-
-        <div class="projectLink">
-          <i class="fa fa-terminal" aria-hidden="true"></i>
-          <a href="http://nmartin.studio.mcad.edu/webdesignprinciples/Final/covalent/index.html" target="_blank">visit site</a>
-        </div>
-      </article>
-
-      <article class="projectContainer">
-        <div class="projectHeader">
-          <i class="fa fa-code" aria-hidden="true"></i>
-          <h5>Space Blastin'</h5>
-        </div>
-
-        <div class="projectTechContainer">
-          <p>HTML5 / CSS3 / JavaScript / GitHub</p>
-        </div>
-
-        <div class="clearfix"></div>
-
-        <a href="https://nmartin.studio.mcad.edu/JavaScript/IDM_JavaScript/wk_08/exercise_8-2/index.html" target="_blank"><img src="img/asteroidJS.png" alt=""></a>
-
-        <div class="projectCopy">
-          <p>Simple exercise implementing reusable JavaScript functions. While object interactions are based on timing, as opposed to collisions, and thus not an actual "game", it still demonstrates a basic undertsanding of writing resuable JavaScript functions. And a couple of animations too!</p>
-        </div>
-
-        <div class="clearfix"></div>
-
-        <div class="showMore">
-          <h3>more info</h3>
-        </div>
-
-        <div class="addlProjectInfo">
-          <div class="codeBox">
-            <p>CSS code that tells the search input on the home page to fade in slower
-            than previously faded elements. I was also able to manipulate the input field's
-            inset color once clicked to be more in line with site's design; a sci-fi green
-            as opposed to the browser's standard blue.</p>
-            <pre class="codeBlock"><code>
-/* function laserBlast():
-  -Accepts ID of HTML elementID
-  -Accepts CSS class name to apply to HTML element
-  -Locates HTML by ID
-  -Changes class of target element
-*/
-function laserBlast(elementID, newClass) {
-	document.getElementById(elementID).setAttribute("class", newClass);
-};
-
-/* function newInstruction():
-  -Accepts ID of HTML elementID
-  -Accepts new HTML to be applied to target element
-  -Locates HTML by ID
-  -Changes inner HTML
-*/
-function newInstruction(elementID, newInstruction) {
-  document.getElementById(elementID).innerHTML = newInstruction;
-};
-
-//Click events reusing functions
-
-document.getElementById("chunk1").onclick = function() {
-  laserBlast("body", "laserBlast");
-  laserBlast("laserBeam", "fire");
-  newInstruction("instruction", "Click the Spaceship to Reload!")
-};
-
-document.getElementById("chunk2").onclick = function() {
-  laserBlast("body", "laserBlast");
-  laserBlast("laserBeam", "fire");
-  newInstruction("instruction", "Click the Spaceship to Reload!")
-};
-
-document.getElementById("chunk3").onclick = function() {
-  laserBlast("body", "laserBlast");
-  laserBlast("laserBeam", "fire");
-  newInstruction("instruction", "Click the Spaceship to Reload!")
-};
-
-document.getElementById("chunk4").onclick = function() {
-  laserBlast("body", "laserBlast");
-  laserBlast("laserBeam", "fire");
-  newInstruction("instruction", "Click the Spaceship to Reload!")
-};
-
-document.getElementById("spaceship").onclick = function() {
-  laserBlast("body", "");
-  laserBlast("laserBeam", "reload");
-  newInstruction("instruction", "pew! pew! pew!")
-};</code></pre>
-          </div>
-
-        <div class="clearfix"></div>
-
-        <div class="codeBox">
-          <p>CSS code that tells the search input on the home page to fade in slower
-          than previously faded elements. I was also able to manipulate the input field's
-          inset color once clicked to be more in line with site's design; a sci-fi green
-          as opposed to the browser's standard blue.</p>
-          <pre class="codeBlock"><code>
-div.asteroidContainer {
-  width: 300px;
-  height: 300px;
-  float: right;
-  position: relative;
-  margin-top: 13rem;
-  margin-right: 10vw;
-}
-
-img.asteroidChunk {
-  width: 50px;
-  cursor: cell;
-}
-
-img.asteroidChunk {
-  position: absolute;
-}
-
-img#chunk1 {
-  top: 35%;
-  left: 35%;
-}
-
-img#chunk2 {
-  top: 34%;
-  right: 42.5%;
-}
-
-img#chunk3 {
-  bottom: 42.5%;
-  left: 37.5%;
-}
-
-img#chunk4 {
-  bottom: 40%;
-  right: 42.5%;
-}
-
-
-body.laserBlast img#chunk1 {
-  top: 35%;
-  animation-duration: 1s;
-  animation-name: breakUp1;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-  animation-delay: .1s;
-}
-
-@keyframes breakUp1 {
-  20% {
-    top: 35%;
-  }
-
-  40% {
-    top: 25%;
-  }
-
-  60% {
-    top: 17%;
-  }
-
-  80% {
-    top: 11%;
-    opacity: .8
-  }
-
-  100% {
-    top: 6%;
-    opacity: 0;
-  }
-}
-
-body.laserBlast img#chunk2 {
-  top: 34%;
-  right: 42.5%;
-  animation-duration: 1s;
-  animation-name: breakUp2;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-  animation-delay: .1s;
-}
-
-@keyframes breakUp2 {
-  20% {
-    top: 34%;
-    right: 42.5%;
-    }
-
-  40% {
-    top: 24%;
-    right: 32.5%;
-  }
-
-  65% {
-    top: 16%;
-    right: 24.5%;
-  }
-
-  90% {
-    top: 10%;
-    right: 18.5%;
-    opacity: .8
-  }
-
-  100% {
-    top: 4%;
-    right: 14.5%;
-    opacity: 0;
-  }
-}
-
-body.laserBlast img#chunk3 {
-  bottom: 42.5%;
-  left: 37.5%;
-  animation-duration: 1s;
-  animation-name: breakUp3;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-  animation-delay: .1s;
-}
-
-@keyframes breakUp3 {
-  20% {
-    bottom: 42.5%;
-    left: 37.5%;
-  }
-
-  40% {
-    bottom: 32.5%;
-    left: 27.5%;
-  }
-
-  60% {
-    bottom: 24.5%;
-    left: 19.5%;
-  }
-
-  80% {
-    bottom: 18.5%;
-    left: 11.5%;
-    opacity: .8
-  }
-
-  100% {
-    bottom: 12.5%;
-    left: 7.5%;
-    opacity: 0;
-  }
-}
-
-body.laserBlast img#chunk4 {
-  bottom: 40%;
-  right: 42.5%;
-  animation-duration: 1s;
-  animation-name: breakUp4;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-  animation-delay: .1s;
-}
-
-@keyframes breakUp4 {
-  20% {
-    bottom: 40%;
-    right: 42.5%;
-  }
-
-  40% {
-    bottom: 30%;
-    right: 32.5%;
-  }
-
-  60% {
-    bottom: 22%;
-    right: 24.5%;
-  }
-
-  80% {
-    bottom: 16%;
-    right: 18.5%;
-    opacity: .8
-  }
-
-  100% {
-    bottom: 8%;
-    right: 12.5%;
-    opacity: 0;
-  }
-}</code></pre>
-          </div>
-
-        <div class="clearfix"></div>
-
-
-        <div class="projectLink">
-          <i class="fa fa-terminal" aria-hidden="true"></i>
-          <a href="https://nmartin.studio.mcad.edu/JavaScript/IDM_JavaScript/wk_08/exercise_8-2/index.html" target="_blank">visit site</a>
-        </div>
-      </article>
-
-      <article class="projectContainer">
-        <div class="projectHeader">
-          <i class="fa fa-code" aria-hidden="true"></i>
-          <h5>songbird saloon</h5>
-        </div>
-
-        <div class="projectTechContainer">
-          <p>HTML5 / CSS3</p>
-        </div>
-
-        <div class="clearfix"></div>
-
-        <a href="https://nmartin.studio.mcad.edu/webdev1/wk10/songbird_saloon/index.html" target="_blank"><img src="img/songbirdShowcase.png" alt=""></a>
-
-        <div class="projectCopy">
-          <p>Small, three-page website completed as an HTML &amp; CSS assignment. My favorite part of this site was the menu design. I was mostly pleased with how the typography came out: hierarchy, font choice, and even a little CSS border trick for the heading tags.</p>
-        </div>
-
-        <div class="clearfix"></div>
-
-        <div class="showMore">
-          <h3>more info</h3>
-        </div>
-
-        <div class="addlProjectInfo">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-
-        <div class="projectLink">
-          <i class="fa fa-terminal" aria-hidden="true"></i>
-          <a href="https://nmartin.studio.mcad.edu/webdev1/wk10/songbird_saloon/index.html" target="_blank">visit site</a>
-        </div>
-      </article>
-
-      <article class="projectContainer">
-        <div class="projectHeader">
-          <i class="fa fa-code" aria-hidden="true"></i>
-          <h5>Early Portfolio</h5>
+          <h5>Proto-Portfolio</h5>
         </div>
 
         <div class="projectTechContainer">
@@ -552,31 +73,231 @@ body.laserBlast img#chunk4 {
         </div>
 
         <div class="addlProjectInfo">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Sass</h3>
+              <p>This was my first major project for which I developed in a Sass environment. I considered this to be,
+                without a doubt, a game changer in how I approached development. Now I can't live without it.
+                What I find most useful about Sass, apart from being able to designate variables, is how you're
+                able to breakup different aspects of your site styling (layout, typography, etc.) into separate stylesheets.
+                This is incredibly helpful when trying to keep your development environment organized, which can quickly become an
+                issue when it comes to building a responsive site.</p>
+            </div>
+
+            <pre class="codeBlock"><code>
+              //Sass Variables
+              <br>
+              <br>
+              $header-font: 'Permanent Marker', cursive;<br>
+              $copy-font: 'Noto Sans', Helvetica, sans-serif;<br>
+              $deco-font: 'Press Start 2P', 'Rubik', Helvetica;<br>
+              <br>
+              $subhead-weight: 700;<br>
+              $copy-weight: 400;<br>
+              <br>
+              //*colors*//<br>
+              <br>
+              $white: #fff;<br>
+              $black: #111;<br>
+              $fuschia: #F012BE;<br>
+              $dark-fuschia: #E01795;<br>
+              $teal: #39CCCC;<br>
+              $dark-teal: #3ABFBB;<br>
+              $blue: #7FDBFF;<br>
+              $gold: #FEAC2B;<br>
+              $dark-gold: #F49E2C;<br>
+              $navy: #042439;<br>
+              $green: #05A57A;<br>
+              $dark-green: #06966D;<br>
+              $orange: #BE6E2F;<br>
+              $grey: #444;<br>
+              <br>
+              <br>
+              //*media queries*//<br>
+              <br>
+              $tablet-width: "screen and (min-width: 480px)";<br>
+              $laptop-width: "screen and (min-width: 720px)";<br>
+              $desktop-width: "screen and (min-width: 1080px)";<br>
+              <br>
+              //*mixins*//<br>
+              <br>
+              @mixin tablet {<br>
+                &nbsp; @media #{$tablet-width} {<br>
+                &nbsp; &nbsp; @content;<br>
+                &nbsp; }<br>
+              }<br>
+              <br>
+              @mixin laptop {<br>
+                &nbsp; @media #{$laptop-width} {<br>
+                  &nbsp; &nbsp; @content;<br>
+                &nbsp; }<br>
+              }<br>
+              <br>
+              @mixin desktop {<br>
+                &nbsp; @media #{$desktop-width} {<br>
+                  &nbsp; &nbsp; @content;<br>
+                &nbsp; }<br>
+              }<br>
+              <br>
+              <br>
+              //importing Sass stylesheets
+              <br>
+              <br>
+              @import "vars";<br>
+              @import "reset";<br>
+              @import "layout";<br>
+              @import "typography";<br>
+              @import "img";<br>
+              @import "animations";<br>
+            </code></pre>
+          </div>
+
+          <div class="borderBreak"></div>
+
+          <div class="clearfix"></div>
+
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Style Tiles</h3>
+              <p>In Responsive Design at MCAD, we were tasked with developing 3 distinct style tiles, one of which
+              would dictate the aesthetic of our selected development project. This was a great exercise that I found
+              useful for quickly iterating design concepts. I understand its utility in the design process, in which
+              the listed adjectives are the first steps in cultivating a theme. These tiles were for my portfolio page,
+              and though it has since evolved, I thought it pertinent to document the design process that led to its
+              first iteration.</p>
+            </div>
+
+            <img class="addlInfoImg" src="img/protoPortfolioST1.jpg" alt="">
+
+            <img class="addlInfoImg" src="img/protoPortfolioST2.jpg" alt="">
+
+            <img class="addlInfoImg" src="img/protoPortfolioST3.jpg" alt="">
+
+            <a href="doc/protoPortfolioStyleTiles.pdf" target="_blank">All Style Tiles</a>
+          </div>
+
+          <div class="borderBreak"></div>
+
+          <div class="clearfix"></div>
+
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>CSS Toggle and Transition</h3>
+              <p>Using CSS alone, I implemented a feature in which the page sections, which are separated by project types, could be toggled
+              on and off. Additionally, the sections slide in from off screen to present a smoother transitional state. I've since
+              reworked this feature using jQuery as there were a handful of limitations with the CSS method however, being able to deploy
+              this with just CSS was definitely an achievement for this project.</p>
+            </div>
+
+            <pre class="codeBlock"><code>
+              //HTML
+              <br>
+              <br>
+              &lt;input type=&quot;checkbox&quot; name=&quot;web-section-checkbox&quot; id=&quot;web-section-checkbox&quot; class=&quot;web-section-checkbox&quot; value=&quot;value&quot;&gt;<br>
+              &lt;label for=&quot;web-section-checkbox&quot; class=&quot;web-section-label&quot;&gt;web&lt;/label&gt;<br>
+              <br>
+              &lt;input type=&quot;checkbox&quot; name=&quot;writing-section-checkbox&quot; id=&quot;writing-section-checkbox&quot; class=&quot;writing-section-checkbox&quot; value=&quot;value&quot;&gt;<br>
+              &lt;label for=&quot;writing-section-checkbox&quot; class=&quot;writing-section-label&quot;&gt;writing&lt;/label&gt;<br>
+              <br>
+              &lt;input type=&quot;checkbox&quot; name=&quot;photo-section-checkbox&quot; id=&quot;photo-section-checkbox&quot; class=&quot;photo-section-checkbox&quot; value=&quot;value&quot;&gt;<br>
+              &lt;label for=&quot;photo-section-checkbox&quot; class=&quot;photo-section-label&quot;&gt;photo&lt;/label&gt;<br>
+              <br>
+              &lt;input type=&quot;checkbox&quot; name=&quot;music-section-checkbox&quot; id=&quot;music-section-checkbox&quot; class=&quot;music-section-checkbox&quot; value=&quot;value&quot;&gt;<br>
+              &lt;label for=&quot;music-section-checkbox&quot; class=&quot;music-section-label&quot;&gt;music&lt;/label&gt;<br>
+              <br>
+              <br>
+              //CSS
+              <br>
+              <br>
+              //*** SECTION STYLES ***//<br>
+              section#web {<br>
+                &nbsp; background-color: $fuschia;<br>
+                &nbsp; color: $white;<br>
+                &nbsp; position: absolute;<br>
+                &nbsp; top: 0;<br>
+                &nbsp; left: -100%;<br>
+                &nbsp; z-index: 1000;<br>
+              }<br>
+              <br>
+              section#writing {<br>
+                &nbsp; background-color: $teal;<br>
+                &nbsp; color: $white;<br>
+                &nbsp; position: absolute;<br>
+                &nbsp; top: 0;<br>
+                &nbsp; left: -100%;<br>
+                &nbsp; z-index: 2000;<br>
+              }<br>
+              <br>
+              section#photo {<br>
+                &nbsp; background-color: $gold;<br>
+                &nbsp; color: $white;<br>
+                &nbsp; position: absolute;<br>
+                &nbsp; top: 0;<br>
+                &nbsp; left: -100%;<br>
+                &nbsp; z-index: 3000;<br>
+              }<br>
+              <br>
+              section#music {<br>
+                &nbsp; background-color: $green;<br>
+                &nbsp; color: $white;<br>
+                &nbsp; position: absolute;<br>
+                &nbsp; top: 0;<br>
+                &nbsp; left: -100%;<br>
+                &nbsp; z-index: 4000;<br>
+              }<br>
+              <br>
+              //*** SECTION TRANSITIONS ***//<br>
+              .web-section-checkbox ~ section#web { transition: left .666s ease .1s }<br>
+              <br>
+              .web-section-checkbox:checked ~ section#web { left: 0;}<br>
+              <br>
+              <br>
+              .writing-section-checkbox ~ section#writing { transition: left .666s ease .1s }<br>
+              <br>
+              .writing-section-checkbox:checked ~ section#writing { left: 0; }<br>
+              <br>
+              <br>
+              .photo-section-checkbox ~ section#photo { transition: left .666s ease .1s }<br>
+              <br>
+              .photo-section-checkbox:checked ~ section#photo { left: 0; }<br>
+              <br>
+              <br>
+              .music-section-checkbox ~ section#music { transition: left .666s ease .1s }<br>
+              <br>
+              .music-section-checkbox:checked ~ section#music { left: 0; }<br>
+            </code></pre>
         </div>
 
-        <div class="projectLink">
-          <i class="fa fa-terminal" aria-hidden="true"></i>
-          <a href="https://nmartin.studio.mcad.edu/responsivedesign/FINAL_PROJECT/portfolio/PUBLIC/index.html" target="_blank">visit site</a>
+        <div class="clearfix"></div>
         </div>
+
+        <a class="projectLink" href="https://nmartin.studio.mcad.edu/responsivedesign/FINAL_PROJECT/portfolio/PUBLIC/index.html" target="_blank">
+          <div class="projectLinkContent">
+            <i class="fa fa-terminal" aria-hidden="true"></i>
+            <h5>visit site</h5>
+          </div>
+        </a>
       </article>
 
       <article class="projectContainer">
         <div class="projectHeader">
           <i class="fa fa-code" aria-hidden="true"></i>
-          <h5>CWWC Redesign</h5>
+          <h5>Covalent</h5>
         </div>
 
         <div class="projectTechContainer">
-            <p>HTML5 / CSS3</p>
+          <p>HTML5 / CSS3 / GitHub</p>
         </div>
 
         <div class="clearfix"></div>
 
-        <a href="http://nmartin.studio.mcad.edu/responsivedesign/IDM-6660-20-SP17-Martin-Nick/week_04/CWWC/index.html" target="_blank"><img class="mobileOnly" src="img/cwwcMobileRedesign.png" alt=""></a>
+        <a href="http://nmartin.studio.mcad.edu/webdesignprinciples/Final/covalent/index.html" target="_blank"><img src="img/covalent_showcase.png" alt=""></a>
 
         <div class="projectCopy">
-          <p>Mobile redesign of the Colorado Wolf &amp; Wildlife Center's homepage completed as an assignment for Responsive Design at MCAD. The current site is not responsive at all, which is why I chose to do it. I was pleased with how the fixed menu came out, which required precise placement of elements outside the flow.</p>
+          <p>This website was completed as my final project for Web Design Principles at MCAD. I chose to do this site
+            because I had long had a vision to develop a platform for science fiction creatives of various mediums to
+            submit their work to, and thus gain exposure for. It was through this project that I learned the value of
+            a templated approach to webpages. Additionally, the site was also built to be responsive using media queries.</p>
         </div>
 
         <div class="clearfix"></div>
@@ -586,13 +307,684 @@ body.laserBlast img#chunk4 {
         </div>
 
         <div class="addlProjectInfo">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Reusable Stylesheets</h3>
+              <p>Since this was my most extensive site yet at the time, I decided to deploy separate stylesheets for templated elements.
+              The navbar and footer were the same across all pages, so I coded their CSS in a separate stylesheet
+              and called them on each HTML page, as opposed to copying that code into the stylesheets for all the different page types.
+              This was before I began using Sass in my development process, so I would approach this differently were I building the site
+              now however, at the time I felt it was an efficient approach to consolidating my code.</p>
+            </div>
+            <pre class="codeBlock"><code>
+              &lt;head&gt;<br>
+                &nbsp; &lt;meta charset=&quot;utf-8&quot;&gt;<br>
+                &nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;<br>
+                &nbsp; &lt;title&gt;Covalent&lt;/title&gt;<br>
+                &nbsp; &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;../css/navbar-footer.css&quot;&gt;<br>
+                &nbsp; &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;../css/category.css&quot;&gt;<br>
+                &nbsp; &lt;script src=&quot;https://use.fontawesome.com/78cae2334f.js&quot;&gt;&lt;/script&gt;<br>
+                &nbsp; &lt;script src=&quot;https://use.typekit.net/qts0ucf.js&quot;&gt;&lt;/script&gt;<br>
+                &nbsp; &lt;script&gt;try{Typekit.load({ async: true });}catch(e){}&lt;/script&gt;<br>
+              &lt;/head&gt;
+            </code></pre>
+          </div>
+          <div class="borderBreak"></div>
+
+          <div class="clearfix"></div>
+
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Media Queries and Repositioning Elements</h3>
+              <p>This site was also the first instance in which I utilized media queries to make the site responsive.
+              I've since begun using Sass to better facilitate responsive development.</p>
+            </div>
+
+            <pre class="codeBlock"><code>
+              .filters {<br>
+                &nbsp; margin: auto;<br>
+                &nbsp; max-width: 460px;<br>
+                &nbsp; background-color: #fff;<br>
+                &nbsp; margin-top: 9em;<br>
+                &nbsp; margin-left: 1em;<br>
+              }<br>
+              <br>
+              .filters a {<br>
+                &nbsp; color: #67a784;<br>
+                &nbsp; -webkit-box-shadow: 0px 2px 5px 0px rgba(204,204,204,1);<br>
+                &nbsp; -moz-box-shadow: 0px 2px 5px 0px rgba(204,204,204,1);<br>
+                &nbsp; box-shadow: 0px 2px 5px 0px rgba(204,204,204,1);<br>
+                &nbsp; text-decoration: none;<br>
+                &nbsp; font-family: "Jaapokki", Helvetica, Arial, sans-serif;<br>
+                &nbsp; font-size: 5.9vw;<br>
+                &nbsp; letter-spacing: .1em;<br>
+                &nbsp; border: 1px solid #67a784;<br>
+                &nbsp; background-color: #fff;<br>
+              }<br>
+              <br>
+              .filters a:hover {<br>
+                &nbsp; background-color: #9EFFCA;<br>
+                &nbsp; border-color: #9EFFCA;<br>
+                &nbsp; color: #fff;<br>
+                &nbsp; text-shadow: none;<br>
+              }<br>
+              <br>
+              @media (min-width: 1000px){<br>
+              <br>
+              /*filter buttons*/<br>
+              <br>
+              .filters a {<br>
+                &nbsp; font-size: 2rem;<br>
+              }<br>
+              <br>
+              .fiction {<br>
+                &nbsp; position: fixed;<br>
+                &nbsp; left: 43px;<br>
+                &nbsp; top: 228px;<br>
+                &nbsp; height: 108px;<br>
+                &nbsp; width: 45px;<br>
+                &nbsp; margin: 0;<br>
+                &nbsp; padding: 0;<br>
+                &nbsp; z-index: 9999;<br>
+                &nbsp; display: inline;<br>
+                &nbsp; -ms-transform: rotate(-90deg);<br>
+                &nbsp; -webkit-transform: rotate(-90deg);<br>
+                &nbsp; transform: rotate(-90deg);<br>
+              }
+            </code></pre>
+          </div>
+
+          <div class="borderBreak"></div>
+
+          <div class="clearfix"></div>
+
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Mockups and HTML Prototype</h3>
+              <p>I designed two mockups for Covalent, which mostly differ in their typography. I also developed a simple
+              prototype with HTML and CSS that is intended to demonstrate the site's structure. The final site is a synthesis of my
+              second mockup and the prototype.</p>
+            </div>
+
+            <img class="addlInfoImg" src="img/covalentMockup1.jpg" alt="">
+
+            <img class="addlInfoImg" src="img/covalentMockup2.jpg" alt="">
+
+            <img class="addlInfoImg" src="img/covalentPrototype.jpg" alt="">
+
+            <a href="https://nmartin.studio.mcad.edu/webdesignprinciples/wk9/capstone_prototype/index.html" target="_blank">Full Prototype</a>
+          </div>
+
+          <div class="borderBreak"></div>
+
+          <div class="clearfix"></div>
+
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Fading and Overriding</h3>
+              <p>I utilized CSS animations to have the search input on the home page fade in slower
+              than previously faded elements. I was also able to override the input field's
+              inset color, once clicked, to be more in line with the site's design&mdash;a sci-fi green
+              as opposed to the browser's standard blue.</p>
+            </div>
+
+            <pre class="codeBlock"><code>
+              .slower-fade {<br>
+                &nbsp; position: absolute;<br>
+                &nbsp; top: 3%;<br>
+                &nbsp; right: 9.2%;<br>
+                &nbsp; opacity:0;<br>
+                &nbsp; -webkit-animation:fadeIn ease-in 1;<br>
+                &nbsp; -moz-animation:fadeIn ease-in 1;<br>
+                &nbsp; animation:fadeIn ease-in 1;<br>
+
+                &nbsp; -webkit-animation-fill-mode:forwards;<br>
+                &nbsp; -moz-animation-fill-mode:forwards;<br>
+                &nbsp; animation-fill-mode:forwards;<br>
+
+                &nbsp; -webkit-animation-duration:2s;<br>
+                &nbsp; -moz-animation-duration:2s;<br>
+                &nbsp; animation-duration:2s;<br>
+                &nbsp; animation-delay: 3s;<br>
+              }<br>
+              <br>
+              .slower-fade input {<br>
+                &nbsp; font-family: "mr-eaves-sans", Helvetica, Arial, sans-serif;<br>
+                &nbsp; font-size: 1.6em;<br>
+                &nbsp; color: #fff;<br>
+                &nbsp; margin-right: .4em;<br>
+                &nbsp; width: 290px;<br>
+                &nbsp; background-color: #B72D03;<br>
+                &nbsp; border: none;<br>
+                &nbsp; border-bottom: 1px solid #fff;<br>
+                &nbsp; transition: border 0.3s;<br>
+              }<br>
+              <br>
+              .slower-fade input[type=text]:focus {<br>
+                &nbsp; outline: none;<br>
+                &nbsp; border-color: #9EFFCA;<br>
+                &nbsp; outline: 0;<br>
+                &nbsp; -webkit-box-shadow: inset 0 -15px 15px -15px rgba(158, 255, 202, 1.00), 0 0 0 0 rgba(158, 255, 202, 1.00);<br>
+                &nbsp; box-shadow: inset 0 -15px 15px -15px rgba(158, 255, 202, 1.00), 0 0 0 0 rgba(158, 255, 202, 1.00);<br>
+              }<br>
+            </code></pre>
+          </div>
+
+          <div class="clearfix"></div>
         </div>
 
-        <div class="projectLink">
-          <i class="fa fa-terminal" aria-hidden="true"></i>
-          <a href="http://nmartin.studio.mcad.edu/responsivedesign/IDM-6660-20-SP17-Martin-Nick/week_04/CWWC/index.html" target="_blank">visit site</a>
+        <a class="projectLink" href="http://nmartin.studio.mcad.edu/webdesignprinciples/Final/covalent/index.html" target="_blank">
+          <div class="projectLinkContent">
+            <i class="fa fa-terminal" aria-hidden="true"></i>
+            <h5>visit site</h5>
+          </div>
+        </a>
+      </article>
+
+      <article class="projectContainer">
+        <div class="projectHeader">
+          <i class="fa fa-code" aria-hidden="true"></i>
+          <h5>Space Blastin'</h5>
         </div>
+
+        <div class="projectTechContainer">
+          <p>HTML5 / CSS3 / JavaScript / GitHub</p>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <a href="https://nmartin.studio.mcad.edu/JavaScript/IDM_JavaScript/wk_08/exercise_8-2/index.html" target="_blank"><img src="img/asteroidJS.png" alt=""></a>
+
+        <div class="projectCopy">
+          <p>This was a (relatively) simple exercise implementing reusable JavaScript functions. I challenged myself to create something
+          of game, or at least the illusion of one by writing reusable functions that apply different CSS classes. I enjoyed this exercise
+          enormously as it provided me the chance to explore yet another means by which to consolidate and make my code more efficient.</p>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="showMore">
+          <h3>more info</h3>
+        </div>
+
+        <div class="addlProjectInfo">
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Same Function, New Classes, Different Elements</h3>
+              <p>There are essentially three things on this page that change when
+              a user clicks on the asteroid cluster. The ship fires a laser beam,
+              the cluster breaks up, and the text in the instruction line changes. The first two
+              changes are made by applying the same setAttribute function, and passing in
+              arguments on the event handlers. Similarly, the text change is also handled with a reusable
+              function.</p>
+            </div>
+
+            <pre class="codeBlock"><code>
+              /* function laserBlast():<br>
+                &nbsp; -Accepts ID of HTML elementID<br>
+                &nbsp; -Accepts CSS class name to apply to HTML element<br>
+                &nbsp; -Locates HTML by ID<br>
+                &nbsp; -Changes class of target element<br>
+              */<br>
+              function laserBlast(elementID, newClass) {<br>
+                &nbsp; document.getElementById(elementID).setAttribute("class", newClass);<br>
+              };<br>
+              <br>
+              /* function newInstruction():<br>
+                &nbsp; -Accepts ID of HTML elementID<br>
+                &nbsp; -Accepts new HTML to be applied to target element<br>
+                &nbsp; -Locates HTML by ID<br>
+                &nbsp; -Changes inner HTML<br>
+              */<br>
+              function newInstruction(elementID, newInstruction) {<br>
+                &nbsp; document.getElementById(elementID).innerHTML = newInstruction;<br>
+              };<br>
+              <br>
+              //Click events reusing functions<br>
+              <br>
+              document.getElementById("chunk1").onclick = function() {<br>
+                &nbsp; laserBlast("body", "laserBlast");<br>
+                &nbsp; laserBlast("laserBeam", "fire");<br>
+                &nbsp; newInstruction("instruction", "Click the Spaceship to Reload!")<br>
+              };<br>
+
+              document.getElementById("chunk2").onclick = function() {<br>
+                &nbsp; laserBlast("body", "laserBlast");<br>
+                &nbsp; laserBlast("laserBeam", "fire");<br>
+                &nbsp; newInstruction("instruction", "Click the Spaceship to Reload!")<br>
+              };<br>
+              <br>
+              document.getElementById("chunk3").onclick = function() {<br>
+                &nbsp; laserBlast("body", "laserBlast");<br>
+                &nbsp; laserBlast("laserBeam", "fire");<br>
+                &nbsp; newInstruction("instruction", "Click the Spaceship to Reload!")<br>
+              };<br>
+              <br>
+              document.getElementById("chunk4").onclick = function() {<br>
+                &nbsp; laserBlast("body", "laserBlast");<br>
+                &nbsp; laserBlast("laserBeam", "fire");<br>
+                &nbsp; newInstruction("instruction", "Click the Spaceship to Reload!")<br>
+              };<br>
+              <br>
+              document.getElementById("spaceship").onclick = function() {<br>
+                &nbsp; laserBlast("body", "");<br>
+                &nbsp; laserBlast("laserBeam", "reload");<br>
+                &nbsp; newInstruction("instruction", "pew! pew! pew!")<br>
+              };<br>
+            </code></pre>
+        </div>
+
+        <div class="borderBreak"></div>
+
+        <div class="clearfix"></div>
+
+        <div class="addlInfoBox">
+          <div class="addlInfoCopy">
+            <h3>Space Assets</h3>
+            <p>The spaceship and asteroid assets I downloaded from <a href="http://www.iconfinder.com" target="_blank">iconfinder.com</a>,
+            an icon service to which I subscribe, so these were used legally. The laser beam I made myself in Adobe
+            Illustrator. Both the spaceship and asteroid are in svg format, which I'm a firm believer in. The latter has been
+            inserted four times and stacked on top of one another using absolute positioning within a parent container to give
+            the effect of a larger cluster that later breaks apart when fired upon.</p>
+          </div>
+          <img class="addlInfoImg" src="img/spaceBlastinAssets.png" alt="">
+
+          <div class="borderBreak"></div>
+
+          <div class="clearfix"></div>
+        </div>
+
+        <div class="addlInfoBox">
+          <div class="addlInfoCopy">
+            <h3>Animating Asteroid Breakup</h3>
+            <p>This site also contains my most complex application of CSS animation to date,
+            I duplicated the asteroid image so that a total of four were grouped together
+            and positioned absolutely within a larger container. Once the class change
+            is initiated by clicking on the asteroid cluster, each of the asteroids fires off
+            in separate directions via keyframes. Towards the end of the sequence, they
+            quickly lose their opacity to present the illusion of disintegration.</p>
+          </div>
+
+          <pre class="codeBlock"><code>
+            div.asteroidContainer {<br>
+              &nbsp; width: 300px;<br>
+              &nbsp; height: 300px;<br>
+              &nbsp; float: right;<br>
+              &nbsp; position: relative;<br>
+              &nbsp; margin-top: 13rem;<br>
+              &nbsp; margin-right: 10vw;<br>
+            }<br>
+            <br>
+            img.asteroidChunk {<br>
+              &nbsp; width: 50px;<br>
+              &nbsp; cursor: cell;<br>
+            }<br>
+            <br>
+            img.asteroidChunk {<br>
+              &nbsp; position: absolute;<br>
+            }<br>
+            <br>
+            img#chunk1 {<br>
+              &nbsp; top: 35%;<br>
+              &nbsp; left: 35%;<br>
+            }<br>
+            <br>
+            img#chunk2 {<br>
+              &nbsp; top: 34%;<br>
+              &nbsp; right: 42.5%;<br>
+            }<br>
+            <br>
+            img#chunk3 {<br>
+              &nbsp; bottom: 42.5%;<br>
+              &nbsp; left: 37.5%;<br>
+            }<br>
+            <br>
+            img#chunk4 <br>
+              &nbsp; bottom: 40%;<br>
+              &nbsp; right: 42.5%;<br>
+            }<br>
+            <br>
+            <br>
+            body.laserBlast img#chunk1 {<br>
+              &nbsp; top: 35%;<br>
+              &nbsp; animation-duration: 1s;<br>
+              &nbsp; animation-name: breakUp1;<br>
+              &nbsp; animation-timing-function: linear;<br>
+              &nbsp; animation-fill-mode: forwards;<br>
+              &nbsp; animation-delay: .1s;<br>
+            }<br>
+            <br>
+            @keyframes breakUp1 {<br>
+              &nbsp; 20% {<br>
+                &nbsp; &nbsp; top: 35%;<br>
+              }<br>
+              <br>
+              &nbsp; 40% {<br>
+                &nbsp; &nbsp; top: 25%;<br>
+              }<br>
+              <br>
+              &nbsp; 60% {<br>
+                &nbsp; &nbsp; top: 17%;<br>
+              }<br>
+              <br>
+              &nbsp; 80% {<br>
+                &nbsp; &nbsp; top: 11%;<br>
+                &nbsp; &nbsp; opacity: .8<br>
+              }<br>
+              <br>
+              &nbsp; 100% {<br>
+                &nbsp; &nbsp; top: 6%;<br>
+                &nbsp; &nbsp; opacity: 0;<br>
+              &nbsp; }<br>
+            }<br>
+            <br>
+            body.laserBlast img#chunk2 {<br>
+              &nbsp; top: 34%;<br>
+              &nbsp; right: 42.5%;<br>
+              &nbsp; animation-duration: 1s;<br>
+              &nbsp; animation-name: breakUp2;<br>
+              &nbsp; animation-timing-function: linear;<br>
+              &nbsp; animation-fill-mode: forwards;<br>
+              &nbsp; animation-delay: .1s;<br>
+            }<br>
+            <br>
+            @keyframes breakUp2 {<br>
+              &nbsp; 20% {<br>
+                &nbsp; &nbsp; top: 34%;<br>
+                &nbsp; &nbsp; right: 42.5%;<br>
+                }<br>
+                <br>
+              &nbsp; 40% {<br>
+                &nbsp; &nbsp; top: 24%;<br>
+                &nbsp; &nbsp; right: 32.5%;<br>
+              }<br>
+              <br>
+              &nbsp; 65% {<br>
+                &nbsp; &nbsp; top: 16%;<br>
+                &nbsp; &nbsp; right: 24.5%;<br>
+              }<br>
+              <br>
+              &nbsp; 90% {<br>
+                &nbsp; &nbsp; top: 10%;<br>
+                &nbsp; &nbsp; right: 18.5%;<br>
+                &nbsp; &nbsp; opacity: .8<br>
+              }<br>
+              <br>
+              &nbsp; 100% {<br>
+                &nbsp; &nbsp; top: 4%;<br>
+                &nbsp; &nbsp; right: 14.5%;<br>
+                &nbsp; &nbsp; opacity: 0;<br>
+              &nbsp; }<br>
+            }<br>
+            <br>
+            body.laserBlast img#chunk3 {<br>
+              &nbsp; bottom: 42.5%;<br>
+              &nbsp; left: 37.5%;<br>
+              &nbsp; animation-duration: 1s;<br>
+              &nbsp; animation-name: breakUp3;<br>
+              &nbsp; animation-timing-function: linear;<br>
+              &nbsp; animation-fill-mode: forwards;<br>
+              &nbsp; animation-delay: .1s;<br>
+            }<br>
+            <br>
+            @keyframes breakUp3 {<br>
+              &nbsp; 20% {<br>
+                &nbsp; &nbsp; bottom: 42.5%;<br>
+                &nbsp; &nbsp; left: 37.5%;<br>
+              }<br>
+              <br>
+              &nbsp; 40% {<br>
+                &nbsp; &nbsp; bottom: 32.5%;<br>
+                &nbsp; &nbsp; left: 27.5%;<br>
+              }<br>
+              <br>
+              &nbsp; 60% {<br>
+                &nbsp; &nbsp; bottom: 24.5%;<br>
+                &nbsp; &nbsp; left: 19.5%;<br>
+              }<br>
+              <br>
+              &nbsp; 80% {<br>
+                &nbsp; &nbsp; bottom: 18.5%;<br>
+                &nbsp; &nbsp; left: 11.5%;<br>
+                &nbsp; &nbsp; opacity: .8<br>
+              }<br>
+              <br>
+              &nbsp; 100% {<br>
+                &nbsp; &nbsp; bottom: 12.5%;<br>
+                &nbsp; &nbsp; left: 7.5%;<br>
+                &nbsp; &nbsp; opacity: 0;<br>
+              &nbsp; }<br>
+            }<br>
+            <br>
+            body.laserBlast img#chunk4 {<br>
+              &nbsp; bottom: 40%;<br>
+              &nbsp; right: 42.5%;<br>
+              &nbsp; animation-duration: 1s;<br>
+              &nbsp; animation-name: breakUp4;<br>
+              &nbsp; animation-timing-function: linear;<br>
+              &nbsp; animation-fill-mode: forwards;<br>
+              &nbsp; animation-delay: .1s;<br>
+            }<br>
+
+            @keyframes breakUp4 {<br>
+              &nbsp; 20% {<br>
+                &nbsp; &nbsp; bottom: 40%;<br>
+                &nbsp; &nbsp; right: 42.5%;<br>
+              }<br>
+              <br>
+              &nbsp; 40% {<br>
+                &nbsp; &nbsp; bottom: 30%;<br>
+                &nbsp; &nbsp; right: 32.5%;<br>
+              }<br>
+              <br>
+              &nbsp; 60% {<br>
+                &nbsp; &nbsp; bottom: 22%;<br>
+                &nbsp; &nbsp; right: 24.5%;<br>
+              }<br>
+              <br>
+              &nbsp; 80% {<br>
+                &nbsp; &nbsp; bottom: 16%;<br>
+                &nbsp; &nbsp; right: 18.5%;<br>
+                &nbsp; &nbsp; opacity: .8<br>
+              }<br>
+              <br>
+              &nbsp; 100% {<br>
+                &nbsp; &nbsp; bottom: 8%;<br>
+                &nbsp; &nbsp; right: 12.5%;<br>
+                &nbsp; &nbsp; opacity: 0;<br>
+              &nbsp; }<br>
+            }
+          </code></pre>
+        </div>
+
+        <div class="clearfix"></div>
+        </div>
+
+        <a class=projectLink href="https://nmartin.studio.mcad.edu/JavaScript/IDM_JavaScript/wk_08/exercise_8-2/index.html" target="_blank">
+          <div class="projectLinkContent">
+          <i class="fa fa-terminal" aria-hidden="true"></i>
+          <h5>visit site</h5>
+          </div>
+        </a>
+      </article>
+
+      <article class="projectContainer">
+        <div class="projectHeader">
+          <i class="fa fa-code" aria-hidden="true"></i>
+          <h5>songbird saloon</h5>
+        </div>
+
+        <div class="projectTechContainer">
+          <p>HTML5 / CSS3</p>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <a href="https://nmartin.studio.mcad.edu/webdev1/wk10/songbird_saloon/index.html" target="_blank"><img src="img/songbirdShowcase.png" alt=""></a>
+
+        <div class="projectCopy">
+          <p>This is a small, three-page website completed as an HTML &amp; CSS assignment. My favorite part of this site
+          is the menu design. I was mostly pleased with how the typography came out: hierarchy, font choice, and even a little CSS
+          border trick for the heading tags.</p>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="showMore">
+          <h3>more info</h3>
+        </div>
+
+        <div class="addlProjectInfo">
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>CSS Positioning, Fixed Headers</h3>
+              <p>At the time I deployed this site, I was fresh out of learning CSS positioning, and thus decided to utilize
+              a fixed header. I was pleased with how simple it was to achieve a feature so ubiquitous on the web with the
+              power of CSS. It's also important to note the reusability of this header via HTML5 syntax and CSS classes,
+              making it easy to deploy across multiple pages.</p>
+            </div>
+
+            <pre class="codeBlock"><code>
+              header {<br>
+                &nbsp; background-color: #fff;<br>
+                &nbsp; position: fixed;<br>
+                &nbsp; top: 0;<br>
+                &nbsp; width: 100%;<br>
+                &nbsp; padding: 1em 0 1em 0;<br>
+                &nbsp; z-index: 1;<br>
+                &nbsp; box-shadow: 0px 3px 0px 0px rgba(173,173,173,0.15);<br>
+              }<br>
+              <br>
+              h1 {<br>
+                &nbsp; font-family: "sail", Georgia, serif;<br>
+                &nbsp; font-size: 3em;<br>
+                &nbsp; float: left;<br>
+                &nbsp; padding-left: 5rem;<br>
+              }<br>
+              <br>
+              .main-nav {<br>
+                &nbsp; float: right;<br>
+                &nbsp; padding-right: 5em;<br>
+              }<br>
+              <br>
+              .main-nav ul {<br>
+                &nbsp; list-style-type: none;<br>
+              }<br>
+              <br>
+              .main-nav li {<br>
+                &nbsp; display: inline;<br>
+                &nbsp; padding: 0 0 0 2em;<br>
+                &nbsp; font-size: 3em;<br>
+              }<br>
+              <br>
+              a {<br>
+                &nbsp; text-decoration: none;<br>
+              }<br>
+              <br>
+              li a:hover {<br>
+                &nbsp; border-bottom: 2px solid #000;<br>
+              }<br>
+            </code></pre>
+        </div>
+
+        <div class="borderBreak"></div>
+
+        <div class="clearfix"></div>
+
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Typographically Satisfying</h3>
+              <p>As mentioned, I was really satisfied with the menu for this site. I had done this same site
+              previously and had opted to upload an image of the same menu that was done in Photoshop. With this later
+              version however, I wanted the menu to be coded directly into the page and I challenged myself to recreate
+              what I had done in Photoshop originally, but this time with HTML & CSS. I implemented my recently acquired knowledge of
+              CSS positioning to create something I was really satisfied with.</p>
+            </div>
+
+            <img class="addlInfoImg" src="img/songbirdMenu.jpg" alt="">
+
+            <pre class="codeBlock"><code>
+              section.menu {<br>
+                &nbsp; width: 1000px;<br>
+                &nbsp; margin: auto;<br>
+                &nbsp; margin-top: 12em;<br>
+                &nbsp; text-align: center;<br>
+              }<br>
+              <br>
+              .menu h2 {<br>
+                &nbsp; text-align: center;<br>
+                &nbsp; border-bottom: 1px solid #000;<br>
+                &nbsp; line-height: 0.1em;<br>
+                &nbsp; margin: .5em 0 .5em 0;<br>
+                &nbsp; font-size: 6em;<br>
+                &nbsp; letter-spacing: .1em;<br>
+              }<br>
+              <br>
+              h2 span {<br>
+                &nbsp; background: #fff;<br>
+                &nbsp; padding:0 10px;<br>
+              }<br>
+              <br>
+              .menu h3 {<br>
+                &nbsp; margin: 1em 0 .5em 0;<br>
+                &nbsp; font-size: 3em;<br>
+              }<br>
+              <br>
+              .menu h4 {<br>
+                &nbsp; font-size: 1.5em;<br>
+                &nbsp; margin-bottom: .2em;<br>
+              }<br>
+              <br>
+              .menu p {<br>
+                &nbsp; margin-bottom: 1.5em;<br>
+                &nbsp; font-size: 1.25em;<br>
+              }<br>
+              <br>
+              div.classics {<br>
+                &nbsp; width: 50%;<br>
+                &nbsp; float: left;<br>
+                &nbsp; text-align: center;<br>
+              }<br>
+              <br>
+              div.specialty {<br>
+                &nbsp; width: 50%;<br>
+                &nbsp; float: right;<br>
+                &nbsp; text-align: center;<br>
+              }<br>
+              <br>
+              div.bottled {<br>
+                &nbsp; clear: both;<br>
+                &nbsp; padding: .5em 0 2em 0;<br>
+                &nbsp; text-align: center;<br>
+              }<br>
+              <br>
+              .bottled h3 {<br>
+                &nbsp; text-align: center;<br>
+                &nbsp; border-bottom: 1px solid #000;<br>
+                &nbsp; line-height: 0.1em;<br>
+                &nbsp; margin: 1.5em 0 1.5em 0;<br>
+              }<br>
+              <br>
+              .bottled h3 span {<br>
+                &nbsp; background: #fff;<br>
+                &nbsp; padding:0 10px;<br>
+              }<br>
+              <br>
+              .bottled span {<br>
+                &nbsp; font-weight: 700;<br>
+              }
+            </code></pre>
+          </div>
+
+          <div class="clearfix"></div>
+        </div>
+
+        <a class="projectLink" href="https://nmartin.studio.mcad.edu/webdev1/wk10/songbird_saloon/index.html" target="_blank">
+          <div class="projectLinkContent">
+            <i class="fa fa-terminal" aria-hidden="true"></i>
+            <h5>visit site</h5>
+          </div>
+        </a>
       </article>
     </div>
   </section>
@@ -619,7 +1011,10 @@ body.laserBlast img#chunk4 {
         <a href="https://projects.invisionapp.com/share/MVE6WVZ9B#/screens/260949047" target="_blank"><img src="img/plantasticShowcase.png" alt=""></a>
 
         <div class="projectCopy">
-          <p>Event planning application designed for UX Design at MCAD. This was built with a team of 2 other students. The process involved stakeholder interviews, competitive analysis, persona development, requirements, information architecture, a high-fidelty prototype, as well as user testing.</p>
+          <p>Plantastic was an event planning application designed for UX Design at MCAD.
+          This was built with a team of 2 other students. The process involved stakeholder interviews,
+          competitive analysis, persona development, product requirements, information architecture,
+          a high-fidelity prototype, as well as user testing.</p>
         </div>
 
         <div class="clearfix"></div>
@@ -629,13 +1024,69 @@ body.laserBlast img#chunk4 {
         </div>
 
         <div class="addlProjectInfo">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Wireframe & High-Fidelity Prototype</h3>
+              <p>After completing user research, persona development, as well as product requirements, our team
+              first developed a wireframe using Adobe XD, and then a high-fidelity prototype using InVision, a widely
+              used prototyping tool throughout the web/application design industry.</p>
+            </div>
+
+            <img class="addlInfoImg" src="img/plantasticWireframe.png" alt="">
+
+            <a href="doc/plantasticWireframe.pdf" target="_blank">Full Wireframe</a>
+
+            <img class="addlInfoImg" src="img/plantasticPhotoOrganizer.jpg" alt="">
+
+            <a href="https://projects.invisionapp.com/share/MVE6WVZ9B#/screens/260949047" target="_blank">Full Prototype</a>
+          </div>
+
+          <div class="borderBreak"></div>
+
+          <div class="clearfix"></div>
+
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Developing Personas and User Goals</h3>
+              <p>In leading up to the development of user personas for Plantastic, we first identified patterns that
+              were prevalent amongst real users who had event planning experience, whether in a professional context,
+              or a personal one. The users were plotted on a variable map, and from there patterns and goals were
+              extrapolated that later informed personas.</p>
+            </div>
+
+            <img class="addlInfoImg" src="img/plantasticUserGoals.jpg" alt="">
+
+            <a href="doc/plantasticPersonaDev.pdf" target="_blank">Full Document</a>
+
+            <img class="addlInfoImg" src="img/plantasticDougPersona.jpg" alt="">
+
+            <a href="doc/plantasticPersonas.pdf" target="_blank">Full Document</a>
+          </div>
+
+          <div class="borderBreak"></div>
+
+          <div class="clearfix"></div>
+
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Usability Testing</h3>
+              <p>After deploying our high-fidelity prototype, we conducted usability testing. This provided us an excellent
+              opportunity for feedback nearing the end of the design phase for Plantastic. We were able to successfully identify
+              where the product fell short, which lay mostly in missing transitional states, as well as see where certain UI elements
+              were ineffective, such as poor placement of certain buttons. In essence, I would say that more than anything, usability testing
+              for Plantastic made clear the value of agile development, and why working in an iterative process is highly efficient.</p>
+            </div>
+
+            <iframe class="video" src="https://www.youtube.com/embed/aI-OsJeqka0" allowfullscreen></iframe>
+          </div>
         </div>
 
-        <div class="projectLink">
-          <i class="fa fa-terminal" aria-hidden="true"></i>
-          <a href="https://projects.invisionapp.com/share/MVE6WVZ9B#/screens/260949047" target="_blank">prototype</a>
-        </div>
+        <a class="projectLink" href="https://projects.invisionapp.com/share/MVE6WVZ9B#/screens/260949047" target="_blank">
+          <div class="projectLinkContent">
+            <i class="fa fa-terminal" aria-hidden="true"></i>
+            <h5>prototype</h5>
+          </div>
+        </a>
       </article>
     </div>
   </section>
@@ -662,7 +1113,10 @@ body.laserBlast img#chunk4 {
         <a href="http://us15.campaign-archive.com/?u=7c660b34f6ded8b5346c9c3b3&id=56c49bff24" target="_blank"><img src="img/ftcMarketingShowcase.png" alt=""></a>
 
         <div class="projectCopy">
-          <p>Speculative marketing campaign for Fancy Tiger Clothing in Denver, CO. This project was completed as coursework for Digital Marketing Principles at MCAD. The development of this campaign included a digital marketing strategy, an email campaign, a blog post, as well as a director mailer for an in-store blogger event.</p>
+          <p>Speculative marketing campaign for Fancy Tiger Clothing in Denver, CO. This project was completed
+            as coursework for Digital Marketing Principles at MCAD. The development of this campaign included
+            a digital marketing strategy, an email campaign, a blog post, as well as a direct mailer for an
+            in-store blogger event.</p>
         </div>
 
         <div class="clearfix"></div>
@@ -672,13 +1126,66 @@ body.laserBlast img#chunk4 {
         </div>
 
         <div class="addlProjectInfo">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Email Campaign</h3>
+              <p>Part one of my speculative campaign for Fancy Tiger involved developing an email campaign.
+              I wanted to not only make announcements regarding merchandise available in their brick and mortar
+              store, as well as their online shop, but also capture and reassert their voice and essence, which is about
+              community, creativity, and friendship.</p>
+            </div>
+
+            <img class="addlInfoImg" src="img/FTC_emailCampaign.jpg" alt="">
+
+            <a href="https://us15.campaign-archive.com/?u=7c660b34f6ded8b5346c9c3b3&id=56c49bff24" target="_blank">Email Campaign</a>
+          </div>
+
+          <div class="borderBreak"></div>
+
+          <div class="clearfix"></div>
+
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Blog Post</h3>
+              <p>I also decided to develop a blog post for the campaign, which I wanted to consist of content that
+              highlighted Fancy Tiger's commitment to the community. By designing a shirt that brought attention to women's rights,
+              and donating a percentage of sales thereof to an organization that fought for those rights, Fancy Tiger took on an enormously
+              supportive role. As such, my idea was that the content of this post should highlight that role. The distribution of this post
+              on their website, as well as through thier social media, would in turn generate awareness of not only a new product, but also an
+              on-going fight, and an organization that is fighting it.</p>
+            </div>
+
+            <img class="addlInfoImg" src="img/FTC_blogEntry.jpg" alt="">
+
+            <a href="http://nmartin.studio.mcad.edu/digitalmarketing/FTCBlogEntry/PUBLIC/index.html" target="_blank">Blog Entry</a>
+          </div>
+
+          <div class="borderBreak"></div>
+
+          <div class="clearfix"></div>
+
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Direct Mailer</h3>
+              <p>For the final piece of my speculative campaign for Fancy Tiger, I decided to design
+              a direct mailer that would be distributed to influential fashion bloggers in the Denver scene.
+              The idea is that by inviting said bloggers to an in-store event, they would in turn write about Fancy
+              Tiger online, which would then reach their followers, thus providing Fancy Tiger with greater exposure.
+              In essence, the direct mailer would be the first step in leveraging bloggers as marketing media.</p>
+            </div>
+
+            <img class="addlInfoImg" src="img/FTC_DirectMailer.jpg" alt="">
+
+            <a href="doc/FTCdirectMailer.pdf" target="_blank">Full Document</a>
+          </div>
         </div>
 
-        <div class="projectLink">
-          <i class="fa fa-terminal" aria-hidden="true"></i>
-          <a href="http://us15.campaign-archive.com/?u=7c660b34f6ded8b5346c9c3b3&id=56c49bff24" target="_blank">email campaign</a>
-        </div>
+        <a class="projectLink" href="http://us15.campaign-archive.com/?u=7c660b34f6ded8b5346c9c3b3&id=56c49bff24" target="_blank">
+          <div class="projectLinkContent">
+            <i class="fa fa-terminal" aria-hidden="true"></i>
+            <h5>email campaign</h5>
+          </div>
+        </a>
       </article>
 
       <article class="projectContainer">
@@ -696,23 +1203,19 @@ body.laserBlast img#chunk4 {
         <a href="https://nmartinmcad.wordpress.com/" target="_blank"><img src="img/marketingBlogShowcase.png" alt=""></a>
 
         <div class="projectCopy">
-          <p>Marketing blog completed for Digital Marketing Principles at MCAD. Weeks 1 - 10 of the course required that we compose blog entries on various marketing topics. These reflections provided an opportunity to better understand the practices and trends behind digital marketing.</p>
+          <p>This was my marketing blog completed for Digital Marketing Principles at MCAD. Weeks 1 - 10
+          of the course required that we compose blog entries on various marketing topics. These reflections
+          provided an opportunity to better understand the practices and trends behind digital marketing.</p>
         </div>
 
         <div class="clearfix"></div>
 
-        <div class="showMore">
-          <h3>more info</h3>
-        </div>
-
-        <div class="addlProjectInfo">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-
-        <div class="projectLink">
-          <i class="fa fa-terminal" aria-hidden="true"></i>
-          <a href="https://nmartinmcad.wordpress.com/" target="_blank">visit blog</a>
-        </div>
+        <a class="projectLink" href="https://nmartinmcad.wordpress.com/" target="_blank">
+          <div class="projectLinkContent">
+            <i class="fa fa-terminal" aria-hidden="true"></i>
+            <h5>visit blog</h5>
+          </div>
+        </a>
       </article>
     </div>
   </section>
@@ -726,16 +1229,37 @@ body.laserBlast img#chunk4 {
   -->
 
   <section class="siteSection" id="aboutSection">
-    <i class="fa fa-window-close" aria-hidden="true"></i>
+    <div class="sectionHeader">
+      <h4>about</h4>
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
 
-      <article class="bioMolecule">
-          <img src="img/jinhaeNick.jpg" alt="">
-          <p>Currently an Interactive Deisgn student at the Minneapolis College of Art &amp; Design, I have come to acquire a deep passion for development. I love watching ideas come to life through code, and experiemnting with new forms of UI. As such, I have a strong desire to not only become more proficient in the langauges I've utilized thus far, but also pursue further, more complex ones. To supplement my education at MCAD, I have begun to learn laguages relevant to game development as well, like C#. As a committed coder, I am ready to learn anything and everything to take my development skills to the next level.</p>
-      </article>
+    <article class="bioContainer">
+      <div class="Bio1">
+        <img src="img/jinhaeNick.jpg" alt="">
+        <p>Currently an Interactive Design student at the Minneapolis College of Art &amp; Design,
+        I have come to acquire a deep passion for development. I love watching ideas come to life
+        through code, and experimenting with new forms of UI. As such, I have a strong desire to
+        not only become more proficient in the languages I've utilized thus far, but also pursue
+        further, more complex ones. To supplement my education at MCAD, I have begun to learn
+        languages relevant to game development as well, like C#. As a committed coder,
+        I am ready to learn anything and everything to take my development skills to the next level.</p>
+      </div>
 
-        <div class="clearfix" id="aboutClearMain"></div>
+      <div class="clearfix"></div>
 
-      <article class="skillsContactWrapper">
+      <div class="Bio2">
+        <img src="img/codeGraphic.svg" alt="">
+        <p>Process wise, it is important that I adhere to clean syntax, modular and reusable code,
+        as well as ensure that my code is valid and free of errors as indicated by modern web technologies.
+        With each project, I strive to refine these aspects of my process and cultivate a greater awareness
+        of best practices for web development.</p>
+      </div>
+    </article>
+
+    <div class="clearfix" id="aboutClearMain"></div>
+
+    <div class="skillsContactWrapper">
       <article class="skills">
         <h5>skills</h5>
           <div class="skill">
@@ -743,43 +1267,42 @@ body.laserBlast img#chunk4 {
             <img src="img/hiSkillBar.svg" alt="">
           </div>
 
-        <div class="clearfix"></div>
+          <div class="clearfix"></div>
 
           <div class="skill">
             <h6>CSS3</h6>
             <img src="img/hiSkillBar.svg" alt="">
           </div>
 
-        <div class="clearfix"></div>
+          <div class="clearfix"></div>
 
           <div class="skill">
             <h6>SASS</h6>
             <img src="img/hiMediumSkillBar.svg" alt="">
           </div>
 
-        <div class="clearfix"></div>
+          <div class="clearfix"></div>
 
           <div class="skill">
             <h6>JavaScript</h6>
             <img src="img/mediumLowSkillBar.svg" alt="">
           </div>
 
-        <div class="clearfix"></div>
+          <div class="clearfix"></div>
 
           <div class="skill">
             <h6>RWD</h6>
             <img src="img/mediumHiSkillBar.svg" alt="">
           </div>
 
-        <div class="clearfix"></div>
+          <div class="clearfix"></div>
 
           <div class="skill">
-            <h6>Git</h6>
+            <h6>GitHub</h6>
             <img src="img/mediumHiSkillBar.svg" alt="">
           </div>
 
-        <div class="clearfix"></div>
-
+          <div class="clearfix"></div>
       </article>
 
       <article class="aboutFooter">
@@ -808,12 +1331,16 @@ body.laserBlast img#chunk4 {
           <a href="https://vagrant-squid-terminus.tumblr.com/" target="_blank"><img src="img/tumblr_logo.svg" alt="Tumblr Icon"></a>
         </div>
       </article>
-      </article>
+    </div>
   </section>
+
+<!-- Blog section disabled until content is prepared
 
   <section class="siteSection" id="blogSection">
     <i class="fa fa-window-close" aria-hidden="true"></i>
   </section>
+
+-->
 
 </main>
 
