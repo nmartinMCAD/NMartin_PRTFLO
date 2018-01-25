@@ -498,6 +498,14 @@ a.projectLink {
   }
 }
 
+.Bio3 p {
+  @include desktop {
+    float: right;
+    width: 50%;
+    margin-right: 0;
+  }
+}
+
 .skills h5 {
   font-size: 8vw;
 

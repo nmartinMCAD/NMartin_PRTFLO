@@ -23,7 +23,12 @@
   <section class="worktypebuttons">
       <h3 class="sectionButton" id="buttonOne" data-rel="sectionOne">dev</h3>
       <h3 class="sectionButton" id="buttonTwo" data-rel="sectionTwo">design</h3>
+
+      <!--Button Disabled as I am not emphasizing Marketing at this time
+
       <h3 class="sectionButton" id="buttonThree" data-rel="sectionThree">marketing</h3>
+
+      -->
 
       <!-- Diasbled button to be reactivated as new sections are created
 
@@ -31,7 +36,7 @@
 
       -->
 
-      <h3 class="sectionButton" id="aboutButton" data-rel="aboutSection">about</h3>
+      <h3 class="sectionButton" id="aboutButton" data-rel="about">about</h3>
 
       <!-- Diasbled button to be reactivated as new sections are created
 
@@ -51,6 +56,124 @@
       <article class="projectContainer">
         <div class="projectHeader">
           <i class="fa fa-code" aria-hidden="true"></i>
+          <h5>Mars Map</h5>
+        </div>
+
+        <div class="projectTechContainer">
+          <p>HTML5 / CSS3 / leaflet.js / featherlight.js</p>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <a href="https://nmartin.studio.mcad.edu/JavaScript/IDM_JavaScript/final/PUBLIC/index.html" target="_blank"><img src="img/marsMapShowcase.png" alt=""></a>
+
+        <div class="projectCopy">
+          <p>This web application presents an interactive map of the planet Mars, which I developed using a JavaScript plugin called leaflet.js. While NASA and Google have their
+            own interactive maps of Mars, I wanted to created something that was a bit more stylistically nuanced.</p>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="showMore">
+          <h3>more info</h3>
+        </div>
+
+        <div class="addlProjectInfo">
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Leaflet.js &amp; Custom Markers</h3>
+              <p>I found leaflet.js to be incredibly useful, especially in terms of how customizable
+              many of the included elements were. The code below demonstrates how via the plugin's
+              JavaScript and CSS files (latter not shown), I was able to deploy my own icons for
+              map markers, plot those markers on the map, and then separate them into marker groups
+              revealable through a layers control element.</p>
+            </div>
+
+            <pre class="codeBlock"><code>
+              //Creating a custom icon for craters of interest markers<br>
+              var craterIcon = L.icon({<br>
+                &nbsp;iconUrl: 'img/craterMarker.png',<br>
+                &nbsp;iconSize:     [32, 32], // size of the icon<br>
+                &nbsp;iconAnchor:   [24, 24], // point of the icon which will correspond to marker's location<br>
+                &nbsp;popupAnchor:  [-16, -30 ] // point from which the popup should open relative to the iconAnchor<br>
+              });<br>
+              <br>
+              //Initializing the craters of interest markers, assigning the custom icon, and binding a pop, from which a relevant lightbox can be accessed<br>
+              var bacolorMarker = L.marker([-114, 831], {icon: craterIcon}).bindPopup("&lt;h3&gt;Bacolor Crater&lt;/h3&gt;&lt;h4&gt;33&deg;N, 241.4&deg;W&lt;/h4&gt;&lt;h5 data-featherlight='#bacolorLightbox'&gt;more info&lt;/h5&gt;")<br>
+                &nbsp;huygensMarker = L.marker([-255, 660], {icon: craterIcon}).bindPopup("&lt;h3&gt;Huygens Crater&lt;/h3&gt;&lt;h4&gt;13.9&deg;S, 304.4&deg;W&lt;/h4&gt;&lt;h5 data-featherlight='#huygensLightbox'&gt;more info&lt;/h5&gt;")<br>
+                &nbsp;schiaparelliMarker = L.marker([-220, 550], {icon: craterIcon}).bindPopup("&lt;h3&gt;Schiaparelli Crater&lt;/h3&gt;&lt;h4&gt;2.7&deg;S, 16.7&deg;E&lt;/h4&gt;&lt;h5 data-featherlight='#schiaparelliLightbox'&gt;more info&lt;/h5&gt;")<br>
+                &nbsp;victoriaMarker = L.marker([-220, 495], {icon: craterIcon}).bindPopup("&lt;h3&gt;Victoria Crater&lt;/h3&gt;&lt;h4&gt;2.05&deg;S, 5.50&deg;W&lt;/h4&gt;&lt;h5 data-featherlight='#victoriaLightbox'&gt;more info&lt;/h5&gt;")<br>
+                &nbsp;arimaMarker = L.marker([-260, 325], {icon: craterIcon}).bindPopup("&lt;h3&gt;Arima Twin Craters&lt;/h3&gt;&lt;h4&gt;15.8&deg;S, 296.3&deg;E&lt;/h4&gt;&lt;h5 data-featherlight='#arimaLightbox'&gt;more info&lt;/h5&gt;")<br>
+              <br>
+              //Assigning craters of interest markers to a layer group that can be toggled from the layers menu<br>
+              var craterMarkers = L.layerGroup([bacolorMarker, huygensMarker, schiaparelliMarker, victoriaMarker, arimaMarker]);<br>
+              <br>
+              //Placing overlay toggles into layer control box<br>
+              var overlays = {<br>
+              	&nbsp;"Geographic Features": interestMarkers,<br>
+                &nbsp;"Mission Landing Sites": landingMarkers,<br>
+                &nbsp;"Craters of Interest": craterMarkers<br>
+              	};<br>
+              <br>
+              //Initializing layer control box, setting 'baseMaps' feature to null since it is not in used, and 'overlayMaps' to my marker groups<br>
+              L.control.layers(null, overlays).addTo(map);<br>
+            </code></pre>
+          </div>
+
+          <div class="borderBreak"></div>
+
+          <div class="clearfix"></div>
+
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Featherlight.js &amp; Styled Lightboxes</h3>
+              <p>I wanted to ensure that there was never too much information on screen at a time. If users
+                wanted to enjoy the map without any markers or additional features, they could choose to do so. If however,
+                they wanted to access information about any given marker, they could through a lightbox feature, for which
+                I implemented using featherlight.js. What I loved about this plugin, much like Leaflet, was how easy it
+                was to manipulate the styling. This allowed me to add my own flair to the application, which was one of my
+                primary goals in distinguishing this map from ones currently available.</p>
+            </div>
+
+            <img class="addlInfoImg" src="img/lightboxCapture.jpg" alt="">
+          </div>
+
+          <div class="borderBreak"></div>
+
+          <div class="clearfix"></div>
+
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Sass & Minify</h3>
+              <p>Since there was a ton of CSS to work with, primarily in Leaflet's and Featherlight's CSS files respectively, I felt it more pertinent
+              than ever to instead convert these files to Sass files, and then compress them with the rest of my CSS.</p>
+            </div>
+
+            <pre class="codeBlock"><code>
+              html{box-sizing:border-box;overflow:scroll}*,*:before,*:after{box-sizing:inherit;margin:0;padding:0}div.clearfix{clear:both}.leaflet-pane,.leaflet-tile,.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-tile-container,.leaflet-pane>svg,.leaflet-pane>canvas,.leaflet-zoom-box,.leaflet-image-layer,.leaflet-layer{position:absolute;left:0;top:0}.leaflet-container{overflow:hidden}.leaflet-tile,.leaflet-marker-icon,.leaflet-marker-shadow{-webkit-user-select:none;
+              -moz-user-select:none;user-select:none;-webkit-user-drag:none}.leaflet-safari .leaflet-tile{image-rendering:-webkit-optimize-contrast}.leaflet-safari .leaflet-tile-container{width:1600px;height:1600px;-webkit-transform-origin:0 0}.leaflet-marker-icon,.leaflet-marker-shadow{display:block}.leaflet-container .leaflet-overlay-pane svg,.leaflet-container .leaflet-marker-pane img,.leaflet-container .leaflet-shadow-pane img,.leaflet-container
+              .leaflet-tile-pane img,.leaflet-container img.leaflet-image-layer{max-width:none !important}.leaflet-container.leaflet-touch-zoom{-ms-touch-action:pan-x pan-y;touch-action:pan-x pan-y}.leaflet-container.leaflet-touch-drag{-ms-touch-action:pinch-zoom}.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom{-ms-touch-action:none;touch-action:none}.leaflet-container{-webkit-tap-highlight-color:transparent}.leaflet-container<br> a{-webkit-tap-highlight-color:rgba(51,181,229,0.4)}.leaflet-tile{filter:inherit;visibility:hidden}.leaflet-tile-loaded{visibility:inherit}.leaflet-zoom-box{width:0;height:0;-moz-box-sizing:border-box;box-sizing:border-box;z-index:800}.leaflet-overlay-pane svg{-moz-user-select:none}.leaflet-pane{z-index:400}.leaflet-tile-pane{z-index:9999}.leaflet-overlay-pane{z-index:400}.leaflet-shadow-pane{z-index:500}.leaflet-marker-pane{z-index:600}.leaflet-tooltip-pane{z-index:650}.leaflet-popup-pane{z-index:700}.leaflet-map-pane canvas{z-index:100}
+              .leaflet-map-pane svg{z-index:200}.leaflet-vml-shape{width:1px;height:1px}.lvml{behavior:url(#default#VML);display:inline-block;position:absolute}.leaflet-control{position:relative;z-index:800;pointer-events:visiblePainted;pointer-events:auto}.leaflet-top,.leaflet-bottom{position:absolute;z-index:1000;pointer-events:none}.leaflet-top{top:0}.leaflet-right{right:0}.leaflet-bottom{bottom:0}.leaflet-left{left:0}.leaflet-control{float:left;clear:both}.leaflet-right .leaflet-control{float:right}.leaflet-top .leaflet-control{margin-top:10px}.leaflet-bottom .leaflet-control{margin-bottom:10px}.leaflet-left .leaflet-control{margin-left:10px}.leaflet-right .leaflet-control{margin-right:10px}.leaflet-fade-anim .leaflet-tile{will-change:opacity}.leaflet-fade-anim .leaflet-popup{opacity:0;-webkit-transition:opacity 0.2s linear;-moz-transition:opacity 0.2s linear;-o-transition:opacity 0.2s linear;transition:opacity 0.2s linear}
+              .leaflet-fade-anim .leaflet-map-pane .leaflet-popup{opacity:1}.leaflet-zoom-animated{-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0}.leaflet-zoom-anim .leaflet-zoom-animated{will-change:transform}.leaflet-zoom-anim .leaflet-zoom-animated{-webkit-transition:-webkit-transform 0.25s cubic-bezier(0, 0, 0.25, 1);-moz-transition:-moz-transform 0.25s cubic-bezier(0, 0, 0.25, 1);-o-transition:-o-transform 0.25s
+              cubic-bezier(0, 0, 0.25, 1);transition:transform 0.25s cubic-bezier(0, 0, 0.25, 1)}.leaflet-zoom-anim .leaflet-tile,.leaflet-pan-anim .leaflet-tile{-webkit-transition:none;-moz-transition:none;-o-transition:none;transition:none}.leaflet-zoom-anim .leaflet-zoom-hide{visibility:hidden}.leaflet-interactive{cursor:pointer}.leaflet-grab{cursor:url("../img/customPointer.png"),auto}.leaflet-crosshair,.leaflet-crosshair<br> .leaflet-interactive{cursor:crosshair}.leaflet-popup-pane,.leaflet-control{cursor:auto}.leaflet-dragging .leaflet-grab,.leaflet-dragging .leaflet-grab .leaflet-interactive,.leaflet-dragging .leaflet-marker-draggable{cursor:url("../img/customAllScrollHold.png"),auto}.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-image-layer,.leaflet-pane>svg path,.leaflet-tile-container{pointer-events:none}.leaflet-marker-icon.leaflet-interactive,.leaflet-image-layer.leaflet-interactive,.leaflet-pane>svg path.leaflet-interactive{pointer-events:visiblePainted;pointer-events:auto}.leaflet-container{background:#ddd;outline:0}.leaflet-container a{color:#0078A8}.leaflet-container a.leaflet-active{outline:2px solid orange}.leaflet-zoom-box{border:2px dotted #38f;background:rgba(255,255,255,0.5)}
+              .leaflet-container{font:12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif}.leaflet-bar{box-shadow:0 1px 5px rgba(0,0,0,0.65);border-radius:4px}.leaflet-bar a,.leaflet-bar a:hover{background-color:rgba(28,38,48,0.6);border-bottom:1px solid #000;width:26px;height:26px;line-height:26px;display:block;text-align:center;text-decoration:none;color:#fff}.leaflet-bar a,.leaflet-control-layers-toggle{background-position:50% 50%;background-repeat:no-repeat;display:block}.leaflet-bar a:hover{background-color:#f4f4f4}.leaflet-bar a:first-child{border-top-left-radius:4px;border-top-right-radius:4px}.leaflet-bar a:last-child{border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-bottom:none}.leaflet-bar a.leaflet-disabled{background-color:rgba(243,83,86,0.7);color:#bbb;cursor:not-allowed}.leaflet-touch .leaflet-bar a{width:30px;height:30px;line-height:30px}.leaflet-touch .leaflet-bar a:first-child{border-top-left-radius:2px;border-top-right-radius:2px}.leaflet-touch .leaflet-bar a:last-child{border-bottom-left-radius:2px;border-bottom-right-radius:2px}.leaflet-control-zoom-in,.leaflet-control-zoom-out{font:bold 18px 'Lucida Console', Monaco, monospace;text-indent:1px}.leaflet-touch .leaflet-control-zoom-in,.leaflet-touch .leaflet-control-zoom-out{font-size:22px}.leaflet-control-layers{box-shadow:0 1px 5px rgba(0,0,0,0.4);background:rgba(28,38,48,0.8);border-radius:5px}.leaflet-control-layers-toggle{background-image:url(images/layers.png);width:36px;height:36px}.leaflet-retina .leaflet-control-layers-toggle{background-image:url(images/layers-2x.png);background-size:26px 26px}.leaflet-touch .leaflet-control-layers-toggle{width:44px;height:44px}.leaflet-control-layers .leaflet-control-layers-list,.leaflet-control-layers-expanded<br> .leaflet-control-layers-toggle{display:none}.leaflet-control-layers-expanded .leaflet-control-layers-list{display:block;position:relative}.leaflet-control-layers-expanded{padding:1rem;color:#fff;font-family:"Exo 2",sans-serif;font-size:6vw;background:rgba(28,38,48,0.8)}@media screen and (min-width: 460px){.leaflet-control-layers-expanded{font-size:1.8em}}.leaflet-control-layers-scrollbar{overflow-y:scroll;overflow-x:hidden;padding-right:5px}.leaflet-control-layers-selector{margin-top:2px;position:relative;top:1px}.leaflet-control-layers label{display:block;margin-bottom:1.5rem}.leaflet-control-layers label:hover{color:#FFDC00;cursor:pointer}.leaflet-control-layers input{height:17px;width:20px}.leaflet-control-layers-separator{height:0;border-top:1px solid #ddd;margin:5px -10px 5px -6px}.leaflet-default-icon-path{background-image:url(images/marker-icon.png)}.leaflet-container .leaflet-control-attribution{background:rgba(28,38,48,0.8);margin:0;margin-right:2rem}.leaflet-control-attribution,.leaflet-control-scale-line{padding:.0 5px}.leaflet-control-attribution a{text-decoration:none;color:#FFDC00}.leaflet-control-attribution a:hover{text-decoration:underline}.leaflet-container .leaflet-control-attribution,.leaflet-container .leaflet-control-scale{font-size:11px}.leaflet-left .leaflet-control-scale{margin-left:5px}.leaflet-bottom .leaflet-control-scale{margin-bottom:5px}.leaflet-control-scale-line{border:2px solid #777;border-top:none;line-height:1.1;padding:2px 5px 1px;font-size:11px;white-space:nowrap;overflow:hidden;-moz-box-sizing:border-box;box-sizing:border-box;background:#fff;background:rgba(255,255,255,0.5)}.leaflet-control-scale-line:not(:first-child){border-top:2px solid<br> #777;border-bottom:none;margin-top:-2px}.leaflet-control-scale-line:not(:first-child):not(:last-child){border-bottom:2px solid #777}.leaflet-touch .leaflet-control-attribution,.leaflet-touch .leaflet-control-layers,.leaflet-touch .leaflet-bar{box-shadow:none}.leaflet-touch .leaflet-control-layers,.leaflet-touch .leaflet-bar{border:2px solid rgba(0,0,0,0.2);background-clip:padding-box}.leaflet-popup{position:absolute;text-align:center;margin-bottom:20px}.leaflet-popup-content-wrapper{padding:1px;text-align:left}.leaflet-popup-content{margin:13px 19px;line-height:1.4}.leaflet-popup-content p{margin:18px 0}.leaflet-popup-tip-container{width:40px;height:20px;position:absolute;left:50%;margin-left:-20px;overflow:hidden;pointer-events:none}.leaflet-popup-tip{width:17px;height:17px;padding:1px;margin:-10px auto 0;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#1c2630;border:1px solid #fff;color:#fff;box-shadow:0 3px 14px rgba(0,0,0,0.4)}.leaflet-container a.leaflet-popup-close-button{position:absolute;top:0;right:0;padding:4px 4px 0 0;border:none;text-align:center;width:24px;height:20px;font:18px/16px "Electrolize",sans-serif;color:#c3c3c3;text-decoration:none;background:transparent}.leaflet-container a.leaflet-popup-close-button:hover{color:#999}.leaflet-popup-scrolled{overflow:auto;border-bottom:1px solid #ddd;border-top:1px solid #ddd}.leaflet-oldie .leaflet-popup-content-wrapper{zoom:1}.leaflet-oldie .leaflet-popup-tip{width:24px;margin:0 auto;-ms-filter:"progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)";filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)}.leaflet-oldie .leaflet-popup-tip-container{margin-top:-1px}.leaflet-oldie .leaflet-control-zoom,.leaflet-oldie .leaflet-control-layers,.leaflet-oldie .leaflet-popup-content-wrapper,.leaflet-oldie .leaflet-popup-tip{border:1px solid #999}.leaflet-div-icon{background:#fff;border:1px solid<br> #666}.leaflet-tooltip{position:absolute;padding:6px;background-color:#fff;border:1px solid #fff;border-radius:3px;color:#222;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,0.4)}.leaflet-tooltip.leaflet-clickable{cursor:pointer;pointer-events:auto}.leaflet-tooltip-top:before,.leaflet-tooltip-bottom:before,.leaflet-tooltip-left:before,.leaflet-tooltip-right:before{position:absolute;pointer-events:none;border:6px solid transparent;background:transparent;content:""}.leaflet-tooltip-bottom{margin-top:6px}.leaflet-tooltip-top{margin-top:-6px}.leaflet-tooltip-bottom:before,.leaflet-tooltip-top:before{left:50%;margin-left:-6px}.leaflet-tooltip-top:before{bottom:0;margin-bottom:-12px;border-top-color:#fff}.leaflet-tooltip-bottom:before{top:0;margin-top:-12px;margin-left:-6px;border-bottom-color:#fff}.leaflet-tooltip-left{margin-left:-6px}.leaflet-tooltip-right{margin-left:6px}<br>.leaflet-tooltip-left:before,.leaflet-tooltip-right:before{top:50%;margin-top:-6px}.leaflet-tooltip-left:before{right:0;margin-right:-12px;border-left-color:#fff}.leaflet-tooltip-right:before{left:0;margin-left:-12px;border-right-color:#fff}@media all{html.with-featherlight{overflow:hidden}.featherlight{display:none;position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483647;text-align:center;white-space:nowrap;cursor:pointer;background:rgba(28,38,48,0.8);background:transparent}.featherlight:last-of-type{background:rgba(0,0,0,0.8)}.featherlight:before{content:'';display:inline-block;height:100%;vertical-align:middle}.featherlight .featherlight-content{padding:1rem 0;position:relative;vertical-align:middle;display:inline-block;overflow:auto;margin-left:5%;margin-right:5%;max-height:80%;max-width:930px;background:rgba(28,38,48,0.8);border:1px solid #fff;cursor:auto;white-space:normal}.featherlight .featherlight-inner{display:block}.featherlight script.featherlight-inner,.featherlight link.featherlight-inner,.featherlight style.featherlight-inner{display:none}.featherlight .featherlight-close-icon{position:absolute;z-index:9999;top:.5rem;right:.4rem;line-height:25px;width:25px;cursor:pointer;text-align:center;font-family:"Electrolize",sans-serif;font-size:1.2em;background:#fff;background:transparent;color:#fff;border:none;padding:0}.featherlight .featherlight-close-icon::-moz-focus-inner{border:0;padding:0}.featherlight .featherlight-image{width:100%}.featherlight-iframe .featherlight-content{border-bottom:0;padding:0;-webkit-overflow-scrolling:touch;overflow-y:scroll}.featherlight iframe{border:none}.featherlight *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}}@media print{@page{size:landscape}html.with-featherlight>*>:not(.featherlight){display:none}}/*!
+            </code></pre>
+        </div>
+
+        <div class="clearfix"></div>
+        </div>
+
+        <a class="projectLink" href="https://nmartin.studio.mcad.edu/JavaScript/IDM_JavaScript/final/PUBLIC/index.html" target="_blank">
+          <div class="projectLinkContent">
+            <i class="fa fa-terminal" aria-hidden="true"></i>
+            <h5>visit app</h5>
+          </div>
+        </a>
+      </article>
+
+      <article class="projectContainer">
+        <div class="projectHeader">
+          <i class="fa fa-code" aria-hidden="true"></i>
           <h5>Proto-Portfolio</h5>
         </div>
 
@@ -63,7 +186,7 @@
         <a href="https://nmartin.studio.mcad.edu/responsivedesign/FINAL_PROJECT/portfolio/PUBLIC/index.html" target="_blank"><img src="img/rwdPortfolioFinal.png" alt=""></a>
 
         <div class="projectCopy">
-          <p>This is my portfolio website as it was for my final project for Responsive Design at MCAD. The challenges I set for myself were to implement off-screen sections that would display purely via CSS as well as some glitch style animations. While my Portfolio has since evolved, there are elements from this version I would like to reintegrate.</p>
+          <p>This is my portfolio website as it was for my final project for Responsive Design at MCAD. The challenges I set for myself were to implement off-screen sections that would display purely via CSS as well as some glitch style animations. While my Portfolio has since evolved, there are elements from this version I would eventually like to reintegrate.</p>
         </div>
 
         <div class="clearfix"></div>
@@ -294,8 +417,7 @@
         <a href="http://nmartin.studio.mcad.edu/webdesignprinciples/Final/covalent/index.html" target="_blank"><img src="img/covalent_showcase.png" alt=""></a>
 
         <div class="projectCopy">
-          <p>This website was completed as my final project for Web Design Principles at MCAD. I chose to do this site
-            because I had long had a vision to develop a platform for science fiction creatives of various mediums to
+          <p>I chose to do this site because I had long had this vision to develop a platform for science fiction creatives of various mediums to
             submit their work to, and thus gain exposure for. It was through this project that I learned the value of
             a templated approach to webpages. Additionally, the site was also built to be responsive using media queries.</p>
         </div>
@@ -400,27 +522,6 @@
 
           <div class="addlInfoBox">
             <div class="addlInfoCopy">
-              <h3>Mockups and HTML Prototype</h3>
-              <p>I designed two mockups for Covalent, which mostly differ in their typography. I also developed a simple
-              prototype with HTML and CSS that is intended to demonstrate the site's structure. The final site is a synthesis of my
-              second mockup and the prototype.</p>
-            </div>
-
-            <img class="addlInfoImg" src="img/covalentMockup1.jpg" alt="">
-
-            <img class="addlInfoImg" src="img/covalentMockup2.jpg" alt="">
-
-            <img class="addlInfoImg" src="img/covalentPrototype.jpg" alt="">
-
-            <a href="https://nmartin.studio.mcad.edu/webdesignprinciples/wk9/capstone_prototype/index.html" target="_blank">Full Prototype</a>
-          </div>
-
-          <div class="borderBreak"></div>
-
-          <div class="clearfix"></div>
-
-          <div class="addlInfoBox">
-            <div class="addlInfoCopy">
               <h3>Fading and Overriding</h3>
               <p>I utilized CSS animations to have the search input on the home page fade in slower
               than previously faded elements. I was also able to override the input field's
@@ -496,9 +597,9 @@
         <a href="https://nmartin.studio.mcad.edu/JavaScript/IDM_JavaScript/wk_08/exercise_8-2/index.html" target="_blank"><img src="img/asteroidJS.png" alt=""></a>
 
         <div class="projectCopy">
-          <p>This was a (relatively) simple exercise implementing reusable JavaScript functions. I challenged myself to create something
-          of game, or at least the illusion of one by writing reusable functions that apply different CSS classes. I enjoyed this exercise
-          enormously as it provided me the chance to explore yet another means by which to consolidate and make my code more efficient.</p>
+          <p>This was a (relatively) simple page implementing reusable JavaScript functions. I challenged myself to create something
+          of game, or at least the illusion of one by writing reusable functions that apply different CSS classes. I enjoyed building this
+          as it provided me the chance to explore yet another means by which to consolidate and make my code more efficient.</p>
         </div>
 
         <div class="clearfix"></div>
@@ -807,25 +908,34 @@
           </div>
         </a>
       </article>
+    </div>
+  </section>
 
+  <section class="siteSection" id="sectionTwo">
+    <div class="sectionHeader">
+      <h4>design</h4>
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+
+    <div class="sectionContentWrapper">
       <article class="projectContainer">
         <div class="projectHeader">
-          <i class="fa fa-code" aria-hidden="true"></i>
-          <h5>songbird saloon</h5>
+          <i class="fa fa-sitemap" aria-hidden="true"></i>
+          <h5>riffBites</h5>
         </div>
 
         <div class="projectTechContainer">
-          <p>HTML5 / CSS3</p>
+            <p>Photoshop / InDesign / Adobe XD / InVision</p>
         </div>
 
         <div class="clearfix"></div>
 
-        <a href="https://nmartin.studio.mcad.edu/webdev1/wk10/songbird_saloon/index.html" target="_blank"><img src="img/songbirdShowcase.png" alt=""></a>
+        <a href="https://projects.invisionapp.com/share/64EWBL7Z7#/screens/268648809_Account_Login-Registration" target="_blank"><img src="img/riffBitesShowcase.png" alt=""></a>
 
         <div class="projectCopy">
-          <p>This is a small, three-page website completed as an HTML &amp; CSS assignment. My favorite part of this site
-          is the menu design. I was mostly pleased with how the typography came out: hierarchy, font choice, and even a little CSS
-          border trick for the heading tags.</p>
+          <p>riffBites is a music recording/sharing application geared towards musicians looking to work on collaborative projects remotely.
+          It was designed to be more lightweight than what is commonly seen is professional audio software. In leading up to the final prototype, our team conducted stakeholder interviews, and from there, developed user personas and product requirements.
+          We then developed and revised our information architecture before conducting user testing and completing final revisions.</p>
         </div>
 
         <div class="clearfix"></div>
@@ -837,165 +947,63 @@
         <div class="addlProjectInfo">
           <div class="addlInfoBox">
             <div class="addlInfoCopy">
-              <h3>CSS Positioning, Fixed Headers</h3>
-              <p>At the time I deployed this site, I was fresh out of learning CSS positioning, and thus decided to utilize
-              a fixed header. I was pleased with how simple it was to achieve a feature so ubiquitous on the web with the
-              power of CSS. It's also important to note the reusability of this header via HTML5 syntax and CSS classes,
-              making it easy to deploy across multiple pages.</p>
+              <h3>Competitive Analysis</h3>
+              <p>In identifying the white space opportunities for riffBites, our team conducted a thorough competitive analysis. What we learned is that while sharing
+              was certainly not something new to audio recording applications, we saw that many applications and services were convoluted in their user experience. As such, it was at this time
+              that we decided making riffBites as simple and intuitive as possible was paramount. We wanted our users to be able to get in, record, share, and get out with as few screens and clicks as possible.
+              </p>
             </div>
 
-            <pre class="codeBlock"><code>
-              header {<br>
-                &nbsp; background-color: #fff;<br>
-                &nbsp; position: fixed;<br>
-                &nbsp; top: 0;<br>
-                &nbsp; width: 100%;<br>
-                &nbsp; padding: 1em 0 1em 0;<br>
-                &nbsp; z-index: 1;<br>
-                &nbsp; box-shadow: 0px 3px 0px 0px rgba(173,173,173,0.15);<br>
-              }<br>
-              <br>
-              h1 {<br>
-                &nbsp; font-family: "sail", Georgia, serif;<br>
-                &nbsp; font-size: 3em;<br>
-                &nbsp; float: left;<br>
-                &nbsp; padding-left: 5rem;<br>
-              }<br>
-              <br>
-              .main-nav {<br>
-                &nbsp; float: right;<br>
-                &nbsp; padding-right: 5em;<br>
-              }<br>
-              <br>
-              .main-nav ul {<br>
-                &nbsp; list-style-type: none;<br>
-              }<br>
-              <br>
-              .main-nav li {<br>
-                &nbsp; display: inline;<br>
-                &nbsp; padding: 0 0 0 2em;<br>
-                &nbsp; font-size: 3em;<br>
-              }<br>
-              <br>
-              a {<br>
-                &nbsp; text-decoration: none;<br>
-              }<br>
-              <br>
-              li a:hover {<br>
-                &nbsp; border-bottom: 2px solid #000;<br>
-              }<br>
-            </code></pre>
-        </div>
+            <img class="addlInfoImg" src="img/riffbitesCompetitiveAnalysis.jpg" alt="">
 
-        <div class="borderBreak"></div>
+            <a href="doc/riffbitesCompetitiveAnalysis.pdf" target="_blank">Full Document</a>
+          </div>
 
-        <div class="clearfix"></div>
+          <div class="borderBreak"></div>
+
+          <div class="clearfix"></div>
 
           <div class="addlInfoBox">
             <div class="addlInfoCopy">
-              <h3>Typographically Satisfying</h3>
-              <p>As mentioned, I was really satisfied with the menu for this site. I had done this same site
-              previously and had opted to upload an image of the same menu that was done in Photoshop. With this later
-              version however, I wanted the menu to be coded directly into the page and I challenged myself to recreate
-              what I had done in Photoshop originally, but this time with HTML & CSS. I implemented my recently acquired knowledge of
-              CSS positioning to create something I was really satisfied with.</p>
+              <h3>Understanding User Task Flow</h3>
+              <p>Before developing our wireframe, our team elaborated on our user scenarios and goals by producing a user task
+              flow map. This map indicates two distinct usage scenarios with individual needs, but also shows where those
+              needs overlap. This in turn helped us to focus the design of our application.</p>
             </div>
 
-            <img class="addlInfoImg" src="img/songbirdMenu.jpg" alt="">
+            <img class="addlInfoImg" src="img/riffBitesVisionDiagram.jpg" alt="">
 
-            <pre class="codeBlock"><code>
-              section.menu {<br>
-                &nbsp; width: 1000px;<br>
-                &nbsp; margin: auto;<br>
-                &nbsp; margin-top: 12em;<br>
-                &nbsp; text-align: center;<br>
-              }<br>
-              <br>
-              .menu h2 {<br>
-                &nbsp; text-align: center;<br>
-                &nbsp; border-bottom: 1px solid #000;<br>
-                &nbsp; line-height: 0.1em;<br>
-                &nbsp; margin: .5em 0 .5em 0;<br>
-                &nbsp; font-size: 6em;<br>
-                &nbsp; letter-spacing: .1em;<br>
-              }<br>
-              <br>
-              h2 span {<br>
-                &nbsp; background: #fff;<br>
-                &nbsp; padding:0 10px;<br>
-              }<br>
-              <br>
-              .menu h3 {<br>
-                &nbsp; margin: 1em 0 .5em 0;<br>
-                &nbsp; font-size: 3em;<br>
-              }<br>
-              <br>
-              .menu h4 {<br>
-                &nbsp; font-size: 1.5em;<br>
-                &nbsp; margin-bottom: .2em;<br>
-              }<br>
-              <br>
-              .menu p {<br>
-                &nbsp; margin-bottom: 1.5em;<br>
-                &nbsp; font-size: 1.25em;<br>
-              }<br>
-              <br>
-              div.classics {<br>
-                &nbsp; width: 50%;<br>
-                &nbsp; float: left;<br>
-                &nbsp; text-align: center;<br>
-              }<br>
-              <br>
-              div.specialty {<br>
-                &nbsp; width: 50%;<br>
-                &nbsp; float: right;<br>
-                &nbsp; text-align: center;<br>
-              }<br>
-              <br>
-              div.bottled {<br>
-                &nbsp; clear: both;<br>
-                &nbsp; padding: .5em 0 2em 0;<br>
-                &nbsp; text-align: center;<br>
-              }<br>
-              <br>
-              .bottled h3 {<br>
-                &nbsp; text-align: center;<br>
-                &nbsp; border-bottom: 1px solid #000;<br>
-                &nbsp; line-height: 0.1em;<br>
-                &nbsp; margin: 1.5em 0 1.5em 0;<br>
-              }<br>
-              <br>
-              .bottled h3 span {<br>
-                &nbsp; background: #fff;<br>
-                &nbsp; padding:0 10px;<br>
-              }<br>
-              <br>
-              .bottled span {<br>
-                &nbsp; font-weight: 700;<br>
-              }
-            </code></pre>
+            <a href="doc/riffbitesVisionDiagram.pdf" target="_blank">PDF Format</a>
           </div>
 
+          <div class="borderBreak"></div>
+
           <div class="clearfix"></div>
+
+          <div class="addlInfoBox">
+            <div class="addlInfoCopy">
+              <h3>Project Scope/Requirements</h3>
+              <p>Based on our user scenarios and previously developed user task flow map, we extrapolated a full-fledged
+              project scope document to be referenced and revised as subsequent design and production took place. This allowed us
+              to further identify primary versus secondary functionality, as well as the core ideals to which the application needed to adhere.
+              </p>
+            </div>
+
+            <img class="addlInfoImg" src="img/riffbitesProjectScope.jpg" alt="">
+
+            <a href="doc/riffbitesProjectScope.pdf" target="_blank">Full Document</a>
+          </div>
         </div>
 
-        <a class="projectLink" href="https://nmartin.studio.mcad.edu/webdev1/wk10/songbird_saloon/index.html" target="_blank">
+        <a class="projectLink" href="https://projects.invisionapp.com/share/64EWBL7Z7#/screens/268648809_Account_Login-Registration" target="_blank">
           <div class="projectLinkContent">
             <i class="fa fa-terminal" aria-hidden="true"></i>
-            <h5>visit site</h5>
+            <h5>prototype</h5>
           </div>
         </a>
       </article>
-    </div>
-  </section>
 
-  <section class="siteSection" id="sectionTwo">
-    <div class="sectionHeader">
-      <h4>design</h4>
-      <i class="fa fa-times" aria-hidden="true"></i>
-    </div>
 
-    <div class="sectionContentWrapper">
       <article class="projectContainer">
         <div class="projectHeader">
           <i class="fa fa-sitemap" aria-hidden="true"></i>
@@ -1011,10 +1019,8 @@
         <a href="https://projects.invisionapp.com/share/MVE6WVZ9B#/screens/260949047" target="_blank"><img src="img/plantasticShowcase.png" alt=""></a>
 
         <div class="projectCopy">
-          <p>Plantastic was an event planning application designed for UX Design at MCAD.
-          This was built with a team of 2 other students. The process involved stakeholder interviews,
-          competitive analysis, persona development, product requirements, information architecture,
-          a high-fidelity prototype, as well as user testing.</p>
+          <p>Plantastic was an event planning application I designed along with a team of 2 others. The process involved stakeholder interviews,
+          competitive analysis, persona development, product requirements, information architecture, a high-fidelity prototype, as well as user testing.</p>
         </div>
 
         <div class="clearfix"></div>
@@ -1048,7 +1054,7 @@
           <div class="addlInfoBox">
             <div class="addlInfoCopy">
               <h3>Developing Personas and User Goals</h3>
-              <p>In leading up to the development of user personas for Plantastic, we first identified patterns that
+              <p>In the earlier stages of our user research, we first identified patterns that
               were prevalent amongst real users who had event planning experience, whether in a professional context,
               or a personal one. The users were plotted on a variable map, and from there patterns and goals were
               extrapolated that later informed personas.</p>
@@ -1090,6 +1096,9 @@
       </article>
     </div>
   </section>
+
+
+  <!-- Disabled Marketing section as I am not emphasizing Marketing at this time.
 
   <section class="siteSection" id="sectionThree">
     <div class="sectionHeader">
@@ -1220,6 +1229,8 @@
     </div>
   </section>
 
+  -->
+
   <!-- Disabled section to be reactivated when new sections are added
 
   <section class="siteSection" id="sectionFour">
@@ -1237,20 +1248,29 @@
     <article class="bioContainer">
       <div class="Bio1">
         <img src="img/jinhaeNick.jpg" alt="">
-        <p>Currently an Interactive Design student at the Minneapolis College of Art &amp; Design,
-        I have come to acquire a deep passion for development. I love watching ideas come to life
-        through code, and experimenting with new forms of UI. As such, I have a strong desire to
-        not only become more proficient in the languages I've utilized thus far, but also pursue
-        further, more complex ones. To supplement my education at MCAD, I have begun to learn
-        languages relevant to game development as well, like C#. As a committed coder,
-        I am ready to learn anything and everything to take my development skills to the next level.</p>
+        <p>I'm Nick, and I'm way into UX/UI Design &amp; Development. I love conceptualizing elegant
+        and engaging UI for both desktop and mobile, and then bringing those concepts to life through efficient and industry
+        standard coding practices. I have a strong desire to become increasingly knowledgeable &amp; proficient in industry trends, tools
+        &amp; methodologies, whether it's implementing current UI design patterns for mobile use, or adopting new JavaScript frameworks.
+        As such, I always push myself to take my skills to the next level, and thus consistently seek opportunities to build upon my
+        knowledge base.</p>
       </div>
 
       <div class="clearfix"></div>
 
       <div class="Bio2">
+        <img src="img/webDesign.svg" alt="">
+        <p>As a designer, I recognize how critical it is to actively engage in user research in order to inform the
+        experience of a website or application. Additionally, testing and validating those designs when relevant is equally
+        vital for the sake of optimizing subsequent production stages. The fun part though, is identifying where those user needs leave
+        room for experimentation that can lead to new and exciting modes of interaction.</p>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <div class="Bio3">
         <img src="img/codeGraphic.svg" alt="">
-        <p>Process wise, it is important that I adhere to clean syntax, modular and reusable code,
+        <p>Development wise, it is important that I adhere to clean syntax, modular and reusable code,
         as well as ensure that my code is valid and free of errors as indicated by modern web technologies.
         With each project, I strive to refine these aspects of my process and cultivate a greater awareness
         of best practices for web development.</p>
@@ -1261,7 +1281,7 @@
 
     <div class="skillsContactWrapper">
       <article class="skills">
-        <h5>skills</h5>
+        <h5>dev skills</h5>
           <div class="skill">
             <h6>HTML5</h6>
             <img src="img/hiSkillBar.svg" alt="">
@@ -1285,7 +1305,7 @@
 
           <div class="skill">
             <h6>JavaScript</h6>
-            <img src="img/mediumLowSkillBar.svg" alt="">
+            <img src="img/mediumSkillBar.svg" alt="">
           </div>
 
           <div class="clearfix"></div>
